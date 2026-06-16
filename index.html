@@ -1167,4 +1167,51 @@ function handlePay(){
 // Extensible product config — add new products here as you launch them.
 const PRODUCTS = {
   air: {
-    name: 'Air Dzikir A
+    name: 'Air Dzikir As-Salam',
+    sel: 1,
+    bundles: {
+      1: { price: 30, chip: 'https://gate.chip-in.asia/REPLACE_AIR_1BOTOL' },
+      2: { price: 55, chip: 'https://gate.chip-in.asia/REPLACE_AIR_2BOTOL' },
+      3: { price: 75, chip: 'https://gate.chip-in.asia/REPLACE_AIR_3BOTOL' }
+    }
+  }
+};
+function selBundle(btn){
+  const card = btn.closest('.product-card');
+  card.querySelectorAll('.bundle').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  PRODUCTS.air.sel = parseInt(btn.dataset.qty);
+  const total = card.querySelector('#airTotal');
+  if(total) total.textContent = btn.dataset.price;
+}
+function buyProduct(key){
+  const p = PRODUCTS[key], b = p.bundles[p.sel];
+  // Falls back to WhatsApp until the real CHIP payment link is pasted in.
+  if(!b.chip || b.chip.indexOf('REPLACE') > -1){ waProduct(key); return; }
+  window.open(b.chip, '_blank');
+}
+function waProduct(key){
+  const p = PRODUCTS[key], b = p.bundles[p.sel];
+  const lang = document.documentElement.getAttribute('data-lang');
+  const text = lang === 'en'
+    ? `Assalamualaikum, I'd like to order *${p.name}* — ${p.sel} bottle(s), RM${b.price}. Please share the payment link and delivery details.`
+    : `Assalamualaikum, saya ingin order *${p.name}* — ${p.sel} botol, RM${b.price}. Mohon kongsikan link bayaran & cara penghantaran.`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+// ── CONTACT FORM ────────────────────────────
+document.getElementById('cForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const name=this.name.value.trim()||'-';
+  const phone=this.phone.value.trim()||'-';
+  const prog=this.program.value||'Tidak dinyatakan';
+  const msg=this.msg.value.trim();
+  const lang=html.getAttribute('data-lang');
+  const text = lang==='en'
+    ? `Assalamualaikum, I am ${name} (${phone}). I am interested in: *${prog}*.${msg?'\n\n'+msg:''}`
+    : `Assalamualaikum, saya ${name} (${phone}). Berminat dengan: *${prog}*.${msg?'\n\n'+msg:''}`;
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(text)}`,'_blank');
+});
+</script>
+</body>
+</html>
