@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="ms" data-lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rawatan Islam — penyembuhan rohani & jasmani melalui Rawatan Rasulullah ﷺ, di bawah bimbingan Syeikh, oleh Majelis Dzikir As-Salam. Dengan izin ALLAH.">
+<meta property="og:title" content="Rawatan Dzikir As-Salam">
+<meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3539YRIagH9wWqO9MR2ReI0yuAz/hf_20260613_160700_ffbc375d-4be0-4e87-af16-083197b44b97.png">
+<title>Rawatan Dzikir As-Salam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ── TOKENS ──────────────────────────────── */
+:root {
+  --p0:   #070312;
+  --p1:   #0f061f;
+  --p2:   #1a0c32;
+  --p3:   #2e1560;
+  --p4:   #4a2490;
+  --p5:   #6b3db8;
+  --gold:  #c9a84c;
+  --gold2: #e8cb7a;
+  --gold3: #fff3cc;
+  --goldg: rgba(201,168,76,.12);
+  --white: #ffffff;
+  --ws:    rgba(255,255,255,.72);
+  --wm:    rgba(255,255,255,.45);
+  --wl:    rgba(255,255,255,.18);
+  --wa:    #25D366;
+  --r:     14px;
+  --r2:    22px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--p0); color: var(--white); line-height: 1.65; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+
+html[data-lang="ms"] .en { display: none !important; }
+html[data-lang="en"] .ms { display: none !important; }
+
+.w { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+.section { padding: 6rem 1.5rem; }
+.s-eye { font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); font-weight: 600; font-family: 'Plus Jakarta Sans', sans-serif; }
+.gold-line { display: block; width: 32px; height: 2px; background: var(--gold); border-radius: 2px; margin: .8rem 0 1.1rem; }
+.fade { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.fade.in { opacity: 1; transform: none; }
+
+/* ── PARTICLES ───────────────────────────── */
+#particles { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+
+/* ── NAV ─────────────────────────────────── */
+#nav {
+  position: fixed; inset: 0 0 auto; z-index: 900; height: 66px;
+  display: flex; align-items: center;
+  background: rgba(7,3,18,.0); transition: background .4s, backdrop-filter .4s;
+}
+#nav.solid { background: rgba(7,3,18,.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--wl); }
+.nav-w { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.logo { display: flex; align-items: center; gap: .65rem; }
+.logo-mark {
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1.5px solid rgba(201,168,76,.4);
+  background: rgba(201,168,76,.08);
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.logo-mark img { width: 100%; height: 100%; object-fit: cover; }
+.logo-mark .lf { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: var(--gold); }
+.logo-text .top { font-family: 'Plus Jakarta Sans', sans-serif; font-size: .95rem; font-weight: 700; color: white; letter-spacing: .01em; }
+.logo-text .bot { font-size: .58rem; letter-spacing: .14em; text-transform: uppercase; color: var(--wm); }
+
+.navl { list-style: none; display: flex; gap: 2rem; }
+.navl a { font-size: .8rem; color: var(--wm); font-weight: 400; transition: color .2s; }
+.navl a:hover { color: var(--gold2); }
+
+.nav-r { display: flex; gap: .6rem; align-items: center; }
+.lpill { display: flex; background: var(--wl); border-radius: 100px; padding: 3px; }
+.lb { background: transparent; border: none; border-radius: 100px; padding: .2rem .6rem; font-size: .7rem; font-weight: 600; cursor: pointer; color: var(--wm); transition: all .2s; font-family: 'Inter', sans-serif; letter-spacing: .04em; }
+.lb.on { background: var(--gold); color: var(--p0); }
+.nav-cta {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: var(--p0); padding: .42rem 1.1rem; border-radius: 100px;
+  font-size: .78rem; font-weight: 700; font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: opacity .2s;
+}
+.nav-cta:hover { opacity: .85; }
+.hbg { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+.hbg span { display: block; width: 22px; height: 1.5px; background: white; border-radius: 2px; transition: all .3s; }
+.hbg.open span:nth-child(1) { transform: rotate(45deg) translate(4.5px,4.5px); }
+.hbg.open span:nth-child(2) { opacity: 0; }
+.hbg.open span:nth-child(3) { transform: rotate(-45deg) translate(4.5px,-4.5px); }
+.mnav { display: none; position: fixed; top: 66px; left: 0; right: 0; z-index: 899; background: rgba(7,3,18,.97); border-top: 1px solid var(--wl); }
+.mnav.open { display: block; }
+.mnav a { display: block; padding: .9rem 1.5rem; font-size: .88rem; color: var(--ws); border-bottom: 1px solid var(--wl); }
+
+/* ── HERO ────────────────────────────────── */
+#hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.hero-video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 0; opacity: .55;
+}
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg,
+    rgba(7,3,18,.35) 0%,
+    rgba(7,3,18,.15) 40%,
+    rgba(7,3,18,.6) 75%,
+    rgba(7,3,18,1) 100%
+  );
+}
+.hero-content {
+  position: relative; z-index: 2;
+  text-align: center; max-width: 760px;
+  padding: 6rem 1.5rem 4rem;
+}
+.hero-arabic {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--gold2); font-weight: 300;
+  letter-spacing: .04em; line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 40px rgba(201,168,76,.3);
+}
+.hero-h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(3.2rem, 7vw, 6rem);
+  font-weight: 800; line-height: 1.0;
+  letter-spacing: -.02em;
+  margin-bottom: 1.4rem;
+  text-shadow: 0 4px 40px rgba(0,0,0,.4);
+}
+.hero-h1 .dot { color: var(--gold); }
+.hero-sub {
+  font-size: clamp(.88rem, 1.8vw, 1.05rem);
+  color: var(--wm); max-width: 540px; margin: 0 auto 2.8rem;
+  line-height: 1.85; font-weight: 300;
+}
+.hero-sub strong { color: var(--gold2); font-weight: 500; }
+.hero-btns { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3.5rem; }
+.btn-gold {
+  display: inline-flex; align-items: center; gap: .45rem;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: var(--p0); padding: .85rem 2rem; border-radius: 100px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .88rem; font-weight: 700;
+  transition: all .25s; box-shadow: 0 4px 24px rgba(201,168,76,.25);
+}
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(201,168,76,.4); }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: .45rem;
+  border: 1.5px solid rgba(201,168,76,.35); color: var(--gold2);
+  padding: .85rem 2rem; border-radius: 100px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .88rem; font-weight: 500;
+  transition: all .25s;
+}
+.btn-outline:hover { border-color: var(--gold); background: var(--goldg); }
+.hero-scroll { display: flex; flex-direction: column; align-items: center; gap: .5rem; opacity: .4; animation: bob 2.5s ease-in-out infinite; }
+.hero-scroll span { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; }
+.hero-scroll svg { animation: bob 2s ease-in-out infinite .3s; }
+@keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+
+/* ── 3 PILLARS STRIP ──────────────────────── */
+#pillars {
+  background: var(--p1); border-top: 1px solid var(--wl); border-bottom: 1px solid var(--wl);
+  padding: 0 1.5rem;
+}
+.pillars-row { display: grid; grid-template-columns: repeat(3,1fr); }
+.pillar {
+  padding: 2.5rem 2rem; border-right: 1px solid var(--wl);
+  text-align: center;
+}
+.pillar:last-child { border-right: none; }
+.pillar-glyph { font-size: 1.8rem; margin-bottom: .7rem; }
+.pillar h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--gold2); margin-bottom: .4rem; }
+.pillar p { font-size: .82rem; color: var(--wm); line-height: 1.7; }
+
+/* ── RAWATAN CONCEPT ──────────────────────── */
+#rawatan { background: var(--p0); }
+.rawatan-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.rt-l h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.9rem,3.5vw,2.8rem); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }
+.rt-l h2 em { font-style: normal; color: var(--gold); }
+.rt-l .lead { font-size: .96rem; color: var(--wm); line-height: 1.85; margin-bottom: 1.8rem; }
+.how-steps { display: flex; flex-direction: column; gap: 1.1rem; }
+.how-step { display: flex; gap: 1rem; align-items: flex-start; }
+.hs-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: .45rem; box-shadow: 0 0 10px rgba(201,168,76,.5); }
+.hs-txt h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: .9rem; font-weight: 600; color: var(--gold2); margin-bottom: .2rem; }
+.hs-txt p { font-size: .82rem; color: var(--wm); line-height: 1.65; }
+
+.hadith-block {
+  background: linear-gradient(135deg, var(--p2), var(--p1));
+  border: 1px solid rgba(201,168,76,.2);
+  border-radius: var(--r2); padding: 2.5rem;
+  position: relative; overflow: hidden;
+}
+.hadith-block::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.hadith-arabic { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--gold2); text-align: center; line-height: 1.9; margin-bottom: 1.2rem; font-weight: 300; }
+.hadith-divider { height: 1px; background: rgba(201,168,76,.15); margin: 1.2rem 0; }
+.hadith-trans { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--ws); line-height: 1.8; text-align: center; margin-bottom: .7rem; }
+.hadith-src { font-size: .7rem; letter-spacing: .1em; color: var(--wm); text-align: center; text-transform: uppercase; }
+.hadith-note { margin-top: 1.5rem; padding: .9rem 1.1rem; background: var(--goldg); border-radius: 10px; border-left: 2px solid var(--gold); }
+.hadith-note p { font-size: .8rem; color: var(--ws); line-height: 1.7; }
+.hadith-note strong { color: var(--gold2); }
+
+/* ── PROGRAMS ─────────────────────────────── */
+#programs { background: var(--p1); }
+.prog-head { max-width: 520px; margin-bottom: 3rem; }
+.prog-head h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.9rem,3.5vw,2.7rem); font-weight: 800; }
+.prog-head h2 em { font-style: normal; color: var(--gold); }
+.prog-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.2rem; }
+.prog-card {
+  background: rgba(255,255,255,.03); border: 1px solid var(--wl);
+  border-radius: var(--r2); padding: 2rem; transition: all .3s;
+  position: relative; overflow: hidden;
+}
+.prog-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0; transition: opacity .3s;
+}
+.prog-card:hover { background: rgba(201,168,76,.05); border-color: rgba(201,168,76,.25); transform: translateY(-4px); }
+.prog-card:hover::before { opacity: 1; }
+.prog-card.premium { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; background: linear-gradient(135deg, rgba(46,21,96,.6), rgba(26,12,50,.8)); border-color: rgba(201,168,76,.2); }
+.prog-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--goldg); border: 1px solid rgba(201,168,76,.2); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 1.1rem; }
+.prog-badge { display: inline-block; padding: .2rem .65rem; border-radius: 100px; font-size: .68rem; font-weight: 600; letter-spacing: .04em; margin-bottom: .75rem; background: var(--goldg); color: var(--gold2); border: 1px solid rgba(201,168,76,.25); }
+.prog-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: .5rem; }
+.prog-card p { font-size: .83rem; color: var(--wm); line-height: 1.75; }
+.prog-meta { display: flex; align-items: center; gap: .5rem; margin-top: 1.1rem; }
+.prog-price { font-family: 'Plus Jakarta Sans', sans-serif; font-size: .9rem; font-weight: 700; color: var(--gold2); }
+.prog-freq { font-size: .75rem; color: var(--wm); }
+.prog-link { display: inline-flex; align-items: center; gap: .3rem; margin-top: 1.2rem; font-size: .8rem; color: var(--gold); font-weight: 600; transition: gap .2s; }
+.prog-link:hover { gap: .5rem; }
+
+/* ── STORE / PRODUCTS ─────────────────────── */
+#store { background: linear-gradient(180deg, var(--p1), var(--p0)); border-top: 1px solid var(--wl); }
+.store-head { max-width: 580px; margin-bottom: 3rem; }
+.store-head h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.9rem,3.5vw,2.7rem); font-weight: 800; line-height: 1.1; }
+.store-head h2 em { font-style: normal; color: var(--gold); }
+.store-sub { font-size: .92rem; color: var(--wm); margin-top: 1rem; line-height: 1.8; }
+.store-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.2rem; }
+.product-card { background: rgba(255,255,255,.03); border: 1px solid var(--wl); border-radius: var(--r2); overflow: hidden; display: flex; flex-direction: column; transition: all .3s; }
+.product-card:hover { border-color: rgba(201,168,76,.25); transform: translateY(-3px); }
+.pc-media { height: 220px; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--wl); background: radial-gradient(circle at 50% 42%, rgba(201,168,76,.16), rgba(26,12,50,.25) 65%); position: relative; }
+.pc-bottle { width: 104px; height: auto; filter: drop-shadow(0 10px 28px rgba(201,168,76,.3)); }
+.pc-media img { width: 100%; height: 100%; object-fit: cover; }
+.pc-body { padding: 1.8rem; display: flex; flex-direction: column; flex-grow: 1; }
+.pc-body h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.3rem; font-weight: 700; margin: .55rem 0 .5rem; }
+.pc-body > p { font-size: .84rem; color: var(--wm); line-height: 1.72; margin-bottom: 1.2rem; }
+.bundle-row { display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1.1rem; }
+.bundle { display: flex; align-items: center; justify-content: space-between; padding: .72rem 1rem; border: 1px solid var(--wl); background: transparent; border-radius: 12px; cursor: pointer; color: var(--ws); font-family: 'Plus Jakarta Sans', sans-serif; font-size: .88rem; font-weight: 600; transition: all .2s; }
+.bundle:hover { border-color: rgba(201,168,76,.4); }
+.bundle.on { border-color: var(--gold); background: var(--goldg); color: var(--white); }
+.b-left { display: flex; align-items: center; gap: .5rem; }
+.b-radio { width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid var(--wm); position: relative; flex-shrink: 0; transition: border-color .2s; }
+.bundle.on .b-radio { border-color: var(--gold); }
+.bundle.on .b-radio::after { content: ''; position: absolute; inset: 3px; border-radius: 50%; background: var(--gold); }
+.b-save { font-size: .66rem; font-weight: 600; color: var(--gold2); background: rgba(201,168,76,.14); padding: .12rem .5rem; border-radius: 100px; letter-spacing: .02em; }
+.b-price { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; }
+.pc-total { display: flex; align-items: baseline; gap: .45rem; margin-bottom: 1.1rem; font-size: .82rem; color: var(--wm); }
+.pc-total strong { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--gold2); }
+.pc-ship { font-size: .72rem; }
+.pc-actions { display: flex; gap: .6rem; margin-top: auto; }
+.btn-buy { flex-grow: 1; padding: .85rem; border: none; border-radius: 100px; background: linear-gradient(135deg, var(--gold), var(--gold2)); color: var(--p0); font-family: 'Plus Jakarta Sans', sans-serif; font-size: .86rem; font-weight: 700; cursor: pointer; transition: all .25s; }
+.btn-buy:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,168,76,.35); }
+.btn-wa-order { display: inline-flex; align-items: center; gap: .4rem; padding: .85rem 1.1rem; border: 1px solid var(--wa); background: rgba(37,211,102,.08); color: var(--wa); border-radius: 100px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: .86rem; font-weight: 600; cursor: pointer; transition: all .2s; }
+.btn-wa-order:hover { background: var(--wa); color: #fff; }
+.pc-hint { font-size: .7rem; color: var(--wm); margin-top: .8rem; text-align: center; }
+.product-card.soon { align-items: center; justify-content: center; text-align: center; background: rgba(255,255,255,.015); border-style: dashed; }
+.pc-soon { padding: 2.5rem 1.8rem; }
+.soon-glyph { font-size: 1.9rem; color: var(--gold); opacity: .55; margin-bottom: .7rem; }
+.pc-soon h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--gold2); margin-bottom: .5rem; }
+.pc-soon p { font-size: .82rem; color: var(--wm); line-height: 1.7; margin-bottom: 1rem; }
+.store-note { text-align: center; font-size: .76rem; color: var(--wm); margin-top: 2.2rem; }
+.store-note b { color: var(--gold2); font-weight: 600; }
+
+/* ── COMMUNITY ────────────────────────────── */
+#community { background: var(--p0); }
+.community-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.cm-l h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.9rem,3.5vw,2.7rem); font-weight: 800; margin-bottom: 1rem; }
+.cm-l h2 em { font-style: normal; color: var(--gold); }
+.cm-l p { font-size: .93rem; color: var(--wm); line-height: 1.85; margin-bottom: 1.3rem; }
+.talqin-steps { display: flex; flex-direction: column; gap: .9rem; margin-top: 1.5rem; }
+.ts { display: flex; gap: .9rem; align-items: flex-start; }
+.ts-n { width: 28px; height: 28px; border-radius: 50%; background: var(--goldg); border: 1px solid rgba(201,168,76,.3); color: var(--gold); font-family: 'Plus Jakarta Sans', sans-serif; font-size: .75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.ts-txt h5 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: .88rem; font-weight: 600; color: var(--gold2); margin-bottom: .15rem; }
+.ts-txt p { font-size: .8rem; color: var(--wm); line-height: 1.6; }
+
+.cm-r .majelis-card {
+  background: linear-gradient(160deg, var(--p3), var(--p2));
+  border: 1px solid rgba(201,168,76,.2); border-radius: var(--r2);
+  padding: 2.5rem; position: relative; overflow: hidden;
+}
+.majelis-card::after {
+  content: ''; position: absolute; bottom: -60px; right: -60px;
+  width: 180px; height: 180px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,.1), transparent 70%);
+}
+.majelis-card .mc-eye { font-size: .67rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); font-weight: 600; font-family: 'Plus Jakarta Sans', sans-serif; }
+.majelis-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; font-weight: 800; margin: .6rem 0 .8rem; }
+.majelis-card p { font-size: .84rem; color: var(--wm); line-height: 1.75; margin-bottom: 1.5rem; }
+.majelis-card .join-wa {
+  display: inline-flex; align-items: center; gap: .6rem;
+  background: var(--wa); color: white; padding: .8rem 1.6rem; border-radius: 100px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .85rem; font-weight: 600;
+  transition: all .2s;
+}
+.majelis-card .join-wa:hover { background: #1fb055; transform: translateY(-2px); }
+.majelis-hadith { margin-top: 1.5rem; padding: 1rem 1.2rem; background: rgba(0,0,0,.2); border-radius: 10px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--wm); line-height: 1.7; }
+.majelis-hadith cite { display: block; font-style: normal; font-size: .7rem; letter-spacing: .08em; margin-top: .4rem; color: rgba(201,168,76,.5); font-family: 'Inter', sans-serif; }
+
+/* ── CHARITY ──────────────────────────────── */
+#charity { background: var(--p1); }
+.charity-top { text-align: center; max-width: 560px; margin: 0 auto 3.5rem; }
+.charity-top h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.9rem,3.5vw,2.7rem); font-weight: 800; }
+.charity-top h2 em { font-style: normal; color: var(--gold); }
+.charity-top p { font-size: .92rem; color: var(--wm); margin-top: .9rem; line-height: 1.8; }
+
+.charity-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
+.cause-card {
+  background: rgba(255,255,255,.03); border: 1px solid var(--wl);
+  border-radius: var(--r2); padding: 1.6rem; cursor: pointer;
+  transition: all .3s; position: relative;
+}
+.cause-card.active { border-color: var(--gold); background: var(--goldg); }
+.cause-card.active::after { content: '✓'; position: absolute; top: 1rem; right: 1rem; width: 20px; height: 20px; background: var(--gold); color: var(--p0); border-radius: 50%; font-size: .7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.cause-card:hover:not(.active) { border-color: rgba(201,168,76,.3); background: rgba(201,168,76,.04); }
+.cause-emoji { font-size: 1.5rem; margin-bottom: .6rem; }
+.cause-card h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: .95rem; font-weight: 700; color: var(--gold2); margin-bottom: .3rem; }
+.cause-card p { font-size: .79rem; color: var(--wm); line-height: 1.6; }
+
+.pay-widget {
+  background: linear-gradient(135deg, var(--p2), var(--p1));
+  border: 1px solid rgba(201,168,76,.2); border-radius: var(--r2);
+  padding: 2.5rem; max-width: 560px; margin: 0 auto;
+  position: relative; overflow: hidden;
+}
+.pay-widget::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.pay-widget h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 1.2rem; }
+.pay-widget h3 #payLabel { color: var(--gold2); }
+.amt-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: .5rem; margin-bottom: .65rem; }
+.ab {
+  padding: .6rem .3rem; border-radius: 9px;
+  border: 1px solid var(--wl); background: transparent;
+  font-size: .86rem; font-weight: 600; cursor: pointer; color: var(--ws);
+  font-family: 'Plus Jakarta Sans', sans-serif; transition: all .2s;
+}
+.ab:hover, .ab.on { background: var(--gold); color: var(--p0); border-color: var(--gold); }
+.custom-input-row {
+  display: flex; align-items: center; gap: 0;
+  border: 1px solid var(--wl); border-radius: 10px; overflow: hidden; margin-bottom: .9rem;
+}
+.ci-prefix { background: rgba(255,255,255,.05); padding: .62rem .85rem; font-size: .82rem; color: var(--wm); border-right: 1px solid var(--wl); font-weight: 600; }
+.custom-input-row input { flex-grow: 1; background: transparent; border: none; outline: none; padding: .62rem .85rem; font-size: .9rem; color: white; font-family: 'Inter', sans-serif; }
+.pw-field {
+  width: 100%; padding: .65rem .95rem; border: 1px solid var(--wl); border-radius: 10px;
+  background: rgba(255,255,255,.04); color: white; font-family: 'Inter', sans-serif; font-size: .86rem;
+  outline: none; transition: border-color .2s; margin-bottom: .65rem;
+}
+.pw-field::placeholder { color: var(--wm); }
+.pw-field:focus { border-color: rgba(201,168,76,.5); }
+.pmethods { display: flex; gap: .35rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.pm-badge { padding: .2rem .65rem; border: 1px solid var(--wl); border-radius: 6px; font-size: .7rem; color: var(--wm); }
+.btn-pay {
+  width: 100%; padding: .9rem; border: none; border-radius: 12px;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: var(--p0); font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: .9rem; font-weight: 700; cursor: pointer; transition: all .25s;
+}
+.btn-pay:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,168,76,.35); }
+.pay-secure { text-align: center; font-size: .7rem; color: var(--wm); margin-top: .7rem; }
+
+/* ── CONTACT ──────────────────────────────── */
+#contact { background: var(--p0); }
+.contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+.ct-l h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.7rem,3vw,2.4rem); font-weight: 800; margin-bottom: .7rem; }
+.ct-l h2 em { font-style: normal; color: var(--gold); }
+.ct-l > p { font-size: .9rem; color: var(--wm); margin-bottom: 2rem; line-height: 1.8; }
+.cform { display: flex; flex-direction: column; gap: .75rem; }
+.fg label { display: block; font-size: .75rem; font-weight: 600; color: var(--wm); margin-bottom: .3rem; font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: .03em; text-transform: uppercase; }
+.fg input, .fg select, .fg textarea {
+  width: 100%; padding: .7rem .95rem;
+  background: rgba(255,255,255,.05); border: 1px solid var(--wl);
+  border-radius: 10px; color: white; font-family: 'Inter', sans-serif; font-size: .86rem;
+  outline: none; transition: border-color .2s;
+}
+.fg input:focus, .fg select:focus, .fg textarea:focus { border-color: rgba(201,168,76,.5); background: rgba(255,255,255,.07); }
+.fg textarea { min-height: 90px; resize: vertical; }
+.fg select option { background: var(--p2); color: white; }
+.fg select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a84c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; }
+.fg::placeholder { color: var(--wm); }
+.f2r { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.btn-send {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: .5rem;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: var(--p0); border: none; border-radius: 100px;
+  padding: .8rem 1.9rem; font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: .87rem; font-weight: 700; cursor: pointer; transition: all .25s;
+}
+.btn-send:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,168,76,.3); }
+
+.ct-r .wa-big {
+  display: flex; align-items: center; gap: .75rem;
+  background: var(--wa); color: white; padding: 1rem 1.8rem; border-radius: 100px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: .9rem; font-weight: 600;
+  margin-bottom: 2.5rem; transition: all .2s; width: fit-content;
+  box-shadow: 0 4px 20px rgba(37,211,102,.25);
+}
+.ct-r .wa-big:hover { background: #1fb055; transform: translateY(-2px); }
+.ct-r > .s-eye { margin-bottom: .8rem; }
+.ct-r > p { font-size: .9rem; color: var(--wm); line-height: 1.8; margin-bottom: 1.8rem; }
+.ct-details { display: flex; flex-direction: column; gap: .9rem; margin-bottom: 2rem; }
+.ctd { display: flex; gap: .75rem; align-items: center; }
+.ctd-icon { width: 34px; height: 34px; border-radius: 50%; background: var(--goldg); border: 1px solid rgba(201,168,76,.2); display: flex; align-items: center; justify-content: center; font-size: .85rem; flex-shrink: 0; }
+.ctd strong { display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: .85rem; font-weight: 600; color: var(--gold2); }
+.ctd span { font-size: .79rem; color: var(--wm); }
+.logger-box { background: rgba(255,255,255,.04); border: 1px solid var(--wl); border-radius: 12px; padding: 1.1rem 1.3rem; }
+.logger-box h5 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: .8rem; font-weight: 700; color: var(--gold); margin-bottom: .3rem; }
+.logger-box p { font-size: .76rem; color: var(--wm); margin-bottom: .6rem; line-height: 1.5; }
+.logger-box a { font-size: .79rem; font-weight: 600; color: var(--gold2); }
+
+/* ── FOOTER ───────────────────────────────── */
+footer { background: var(--p1); border-top: 1px solid var(--wl); padding: 3.5rem 1.5rem 2rem; }
+.foot-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.fi-brand .ft-name { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--gold2); margin-bottom: .3rem; }
+.fi-brand .ft-sub { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: var(--wm); margin-bottom: 1rem; }
+.fi-brand p { font-size: .81rem; color: rgba(255,255,255,.38); line-height: 1.7; max-width: 280px; }
+footer h5 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: .72rem; font-weight: 700; color: var(--wm); letter-spacing: .12em; text-transform: uppercase; margin-bottom: .9rem; }
+footer ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+footer ul a { font-size: .82rem; color: rgba(255,255,255,.4); transition: color .2s; }
+footer ul a:hover { color: var(--gold2); }
+.foot-hr { height: 1px; background: var(--wl); margin-bottom: 1.8rem; }
+.foot-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.foot-copy { font-size: .7rem; color: rgba(255,255,255,.22); }
+.foot-verse { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .9rem; color: rgba(255,255,255,.25); }
+
+/* ── FLOATING WA ──────────────────────────── */
+#fwa {
+  position: fixed; bottom: 1.8rem; right: 1.8rem; z-index: 800;
+  width: 54px; height: 54px; border-radius: 50%; background: var(--wa);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.4); transition: transform .3s;
+}
+#fwa:hover { transform: scale(1.1); }
+#fwa::after { content: ''; position: absolute; inset: -7px; border-radius: 50%; background: rgba(37,211,102,.15); animation: wp 2.5s ease infinite; }
+@keyframes wp { 0%,100%{transform:scale(1);opacity:0} 50%{transform:scale(1.2);opacity:1} }
+
+/* ── RESPONSIVE ───────────────────────────── */
+@media(max-width:900px){
+  .rawatan-inner, .community-inner, .contact-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+  .pillars-row { grid-template-columns: 1fr; }
+  .pillar { border-right: none; border-bottom: 1px solid var(--wl); }
+  .prog-grid { grid-template-columns: 1fr; }
+  .store-grid { grid-template-columns: 1fr; }
+  .prog-card.premium { grid-column: auto; grid-template-columns: 1fr; }
+  .charity-layout { grid-template-columns: 1fr 1fr; }
+  .foot-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .foot-bottom { flex-direction: column; align-items: flex-start; }
+}
+@media(max-width:640px){
+  .navl, .nav-cta { display: none; }
+  .hbg { display: flex; }
+  .charity-layout { grid-template-columns: 1fr 1fr; }
+  .f2r { grid-template-columns: 1fr; }
+  .amt-grid { grid-template-columns: repeat(3,1fr); }
+}
+</style>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- ══════ NAV ══════ -->
+<nav id="nav">
+  <div class="w nav-w">
+    <a href="#" class="logo">
+      <div class="logo-mark">
+        <img src="https://logger.ahader.cloud/logo.jpg" alt="Logo"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="lf" style="display:none">DA</span>
+      </div>
+      <div class="logo-text">
+        <div class="top">Rawatan Dzikir As-Salam</div>
+        <div class="bot">dzikirassalam.com</div>
+      </div>
+    </a>
+    <ul class="navl">
+      <li><a href="#rawatan"><span class="ms">Rawatan</span><span class="en">Healing</span></a></li>
+      <li><a href="#programs"><span class="ms">Program</span><span class="en">Programs</span></a></li>
+      <li><a href="#store"><span class="ms">Produk</span><span class="en">Store</span></a></li>
+      <li><a href="#community"><span class="ms">Komuniti</span><span class="en">Community</span></a></li>
+      <li><a href="#charity"><span class="ms">Sedekah</span><span class="en">Donate</span></a></li>
+    </ul>
+    <div class="nav-r">
+      <div class="lpill">
+        <button class="lb on" data-l="ms">BM</button>
+        <button class="lb" data-l="en">EN</button>
+      </div>
+      <a href="#charity" class="nav-cta">
+        <span class="ms">✦ Bersedekah</span>
+        <span class="en">✦ Donate</span>
+      </a>
+      <button class="hbg" id="hbg"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mnav" id="mnav">
+  <a href="#rawatan" onclick="closeM()"><span class="ms">Rawatan</span><span class="en">Healing</span></a>
+  <a href="#programs" onclick="closeM()"><span class="ms">Program</span><span class="en">Programs</span></a>
+  <a href="#store" onclick="closeM()"><span class="ms">Produk</span><span class="en">Store</span></a>
+  <a href="#community" onclick="closeM()"><span class="ms">Komuniti</span><span class="en">Community</span></a>
+  <a href="#charity" onclick="closeM()"><span class="ms">Sedekah</span><span class="en">Donate</span></a>
+  <a href="#contact" onclick="closeM()"><span class="ms">Hubungi</span><span class="en">Contact</span></a>
+</div>
+
+<!-- ══════ HERO ══════ -->
+<section id="hero">
+  <video class="hero-video" autoplay muted loop playsinline
+    poster="https://d8j0ntlcm91z4.cloudfront.net/user_3539YRIagH9wWqO9MR2ReI0yuAz/hf_20260613_160700_ffbc375d-4be0-4e87-af16-083197b44b97.png">
+    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3539YRIagH9wWqO9MR2ReI0yuAz/hf_20260613_160747_abbad57b-1db3-4f2d-91d3-787cc49a2cac.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:.62rem; letter-spacing:.26em; text-transform:uppercase; color:var(--ws); font-weight:600; margin-bottom:1.2rem;">Pusat Rawatan Dzikir As-Salam Worldwide</div>
+    <div class="hero-arabic">أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ ٱلْقُلُوبُ</div>
+    <h1 class="hero-h1">Rawatan Islam</h1>
+    <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.1rem,2.6vw,1.6rem); color:var(--gold2); letter-spacing:.02em; margin:-.4rem 0 1.5rem; text-shadow:0 0 30px rgba(201,168,76,.25);">The Miracle of Dzikir · Keajaiban Dzikir</p>
+    <p class="hero-sub">
+      <span class="ms">Penyembuhan rohani dan jasmani melalui <strong>Rawatan Rasulullah ﷺ</strong> — berteraskan ilmu yang bersanad hingga ke Baginda ﷺ. Dengan izin ALLAH, tiada penyakit yang tiada penyembuhnya.<br>Di bawah bimbingan Syeikh Muhammad Syahrum Alfan, bersama <strong>Majelis Dzikir As-Salam</strong>.</span>
+      <span class="en">Healing of body and soul through the <strong>way of Rasulullah ﷺ</strong> — grounded in knowledge with an unbroken chain back to the Prophet ﷺ. By ALLAH's will, no illness is without its cure.<br>Guided by Syeikh Muhammad Syahrum Alfan, with <strong>Majelis Dzikir As-Salam</strong>.</span>
+    </p>
+    <div class="hero-btns">
+      <a href="https://pay.chip-in.asia/rawatandzikirterapi" target="_blank" rel="noopener" class="btn-gold">
+        <span class="ms">Mulakan Rawatan</span>
+        <span class="en">Start Treatment</span>
+        <svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#contact" class="btn-outline">
+        <span class="ms">Hubungi Kami</span>
+        <span class="en">Contact Us</span>
+      </a>
+    </div>
+    <div class="hero-scroll">
+      <span class="ms">Terokai</span><span class="en">Explore</span>
+      <svg width="16" height="16" fill="none" viewBox="0 0 16 16"><path d="M8 3v10M4 9l4 4 4-4" stroke="rgba(201,168,76,.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ PILLARS STRIP ══════ -->
+<div id="pillars">
+  <div class="w">
+    <div class="pillars-row">
+      <div class="pillar fade">
+        <div class="pillar-glyph">💝</div>
+        <h3><span class="ms">Sedekah</span><span class="en">Donate</span></h3>
+        <p class="ms">Salam Berkat Box, Madrasah Tahfiz, Dakwah Majelis Dzikir As-Salam — sedekah jariah yang mengalir tanpa henti.</p>
+        <p class="en">Salam Berkat Box, Madrasah Tahfiz, Dakwah Majelis Dzikir As-Salam — ongoing charity that never stops flowing.</p>
+      </div>
+      <div class="pillar fade" style="transition-delay:.1s">
+        <div class="pillar-glyph">📢</div>
+        <h3><span class="ms">Dakwah</span><span class="en">Spread</span></h3>
+        <p class="ms">Dakwah melalui ilmu, majlis dzikir, dan Kuliah Hakikat — mengajak semua kembali kepada fitrah.</p>
+        <p class="en">Dakwah through knowledge, dhikr circles, and Kuliah Hakikat — calling all back to their fitrah.</p>
+      </div>
+      <div class="pillar fade" style="transition-delay:.2s">
+        <div class="pillar-glyph">🌿</div>
+        <h3><span class="ms">Sembuh</span><span class="en">Heal</span></h3>
+        <p class="ms">Rawatan rohani dan jasmani melalui Rawatan Rasulullah ﷺ — menyembuhkan jiwa dan tubuh dengan izin ALLAH, kerana tiada yang mustahil bagi-Nya.</p>
+        <p class="en">Healing of soul and body the way of Rasulullah ﷺ — restoring spirit and body by ALLAH's will, for nothing is impossible for Him.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ RAWATAN CONCEPT ══════ -->
+<section id="rawatan" class="section">
+  <div class="w">
+    <div class="rawatan-inner">
+      <div class="rt-l fade">
+        <p class="s-eye ms">RAWATAN RASULULLAH ﷺ</p>
+        <p class="s-eye en">THE PROPHET'S ﷺ WAY OF HEALING</p>
+        <span class="gold-line"></span>
+        <h2>
+          <span class="ms">Rawatan Rohani &amp; Jasmani<br><em>Kaedah Penyembuhan</em><br>Rasulullah ﷺ</span>
+          <span class="en">Healing of Body &amp; Soul<br><em>The Prophet's ﷺ</em><br>Way of Healing</span>
+        </h2>
+        <p class="lead ms">Rawatan Islam yang berteraskan ilmu bersanad — silsilahnya bersambung hingga ke Rasulullah ﷺ. Kami hanya mengamalkan apa yang telah dicontohkan oleh Baginda ﷺ, untuk merawat penyakit jasmani dan rohani. Dengan izin ALLAH, tiada penyakit yang tiada penyembuhnya.</p>
+        <p class="lead en">Islamic healing grounded in ilmu bersanad — knowledge with an unbroken chain back to Rasulullah ﷺ. We practise only what the Prophet ﷺ exemplified, to treat illness of body and soul. By ALLAH's will, no illness is without its cure.</p>
+        <blockquote style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.05rem,2vw,1.35rem); line-height:1.7; color:var(--gold3); border-left:2px solid var(--gold); padding:.2rem 0 .2rem 1.2rem; margin:0 0 2rem;">
+          <span class="ms">"Bersama ALLAH dengan dzikir — sebuah dunia tanpa batas. Tidak terikat waktu mahupun tempat; di mana sahaja anda berada, dengan izin ALLAH, kami hadir."</span>
+          <span class="en">"With ALLAH through dhikr — a world without limits. Unbound by time or place; wherever you are, by ALLAH's will, we are there."</span>
+          <cite style="display:block; font-family:'Plus Jakarta Sans',sans-serif; font-style:normal; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-top:.8rem;">— Guru Mursyid</cite>
+        </blockquote>
+        <div class="how-steps">
+          <div class="how-step">
+            <div class="hs-dot"></div>
+            <div class="hs-txt">
+              <h4><span class="ms">Kembali kepada ALLAH</span><span class="en">A Return to ALLAH</span></h4>
+              <p class="ms">Melalui dzikir dan doa yang diwarisi daripada Rasulullah ﷺ, hati dihampirkan semula kepada ALLAH.</p>
+              <p class="en">Through the dhikr and supplications inherited from Rasulullah ﷺ, the heart is drawn back to ALLAH.</p>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="hs-dot"></div>
+            <div class="hs-txt">
+              <h4><span class="ms">Musuh ALLAH Menjadi Kecil</span><span class="en">ALLAH's Enemy Becomes Small</span></h4>
+              <p class="ms">Seperti hadis Rasulullah ﷺ — dengan dzikir dan doa, gangguan syaitan dan penyakit dihapuskan dengan izin ALLAH.</p>
+              <p class="en">As narrated in the hadith — through dhikr and supplication, the influence of shaytan and illness is removed by ALLAH's will.</p>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="hs-dot"></div>
+            <div class="hs-txt">
+              <h4><span class="ms">Pesakit Sembuh dengan Izin-Nya</span><span class="en">Patient Heals by His Will</span></h4>
+              <p class="ms">Penyembuhan berlaku bukan kerana Guru Mursyid, tetapi kerana ALLAH — Guru hanyalah saluran rahmat-Nya.</p>
+              <p class="en">Healing happens not because of the Guru Mursyid, but because of ALLAH — the Guru is only a channel of His mercy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rt-r fade" style="transition-delay:.15s">
+        <div class="hadith-block">
+          <div class="hadith-arabic">كَانَ النَّبِيُّ ﷺ يَقُولُ<br>اخْرُجْ عَدُوَّ اللَّهِ</div>
+          <div class="hadith-divider"></div>
+          <div class="hadith-trans">
+            <span class="ms">"Nabi ﷺ bersabda kepada yang sakit:<br>'<strong>Keluarlah, wahai musuh ALLAH</strong>'"</span>
+            <span class="en">"The Prophet ﷺ would say to the afflicted:<br>'<strong>Come out, O enemy of ALLAH</strong>'"</span>
+          </div>
+          <div class="hadith-src">HR Ahmad · Shahih</div>
+          <div class="hadith-note">
+            <p><span class="ms">Inilah kaedah yang diamalkan Rasulullah ﷺ — <strong>rawatan yang bersumberkan wahyu, diwarisi melalui ilmu yang bersanad.</strong> Dengan nama ALLAH dan dzikir, segala gangguan menjadi lemah dan hilang dengan izin-Nya.</span><span class="en">This is the way practised by Rasulullah ﷺ — <strong>healing sourced from revelation, inherited through an unbroken chain of knowledge.</strong> By the name of ALLAH and His remembrance, every affliction is weakened and lifted by His will.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ PROGRAMS ══════ -->
+<section id="programs" class="section">
+  <div class="w">
+    <div class="prog-head fade">
+      <p class="s-eye ms">PROGRAM KAMI</p>
+      <p class="s-eye en">OUR PROGRAMS</p>
+      <span class="gold-line"></span>
+      <h2><span class="ms">Pilih Jalan<br><em>Rawatan Anda</em></span><span class="en">Choose Your<br><em>Healing Path</em></span></h2>
+    </div>
+    <div class="prog-grid">
+
+      <div class="prog-card fade" style="transition-delay:.05s">
+        <div class="prog-icon">🌿</div>
+        <span class="prog-badge ms">Program Utama</span>
+        <span class="prog-badge en">Flagship</span>
+        <h3><span class="ms">Rawatan Dzikir Terapi</span><span class="en">Dzikir Healing Therapy</span></h3>
+        <p class="ms">Sesi rawatan Islam secara peribadi — untuk penyakit jasmani, rohani, tekanan jiwa, atau gangguan. Mengikut kaedah penyembuhan Rasulullah ﷺ, berteraskan ilmu bersanad. Dengan izin ALLAH.</p>
+        <p class="en">A personal Islamic healing session — for illness of body or soul, emotional strain, or spiritual disturbance. Following the Prophet's ﷺ way of healing, grounded in ilmu bersanad. By ALLAH's will.</p>
+        <div class="prog-meta">
+          <span class="prog-price ms">Hubungi untuk harga</span>
+          <span class="prog-price en">Contact for pricing</span>
+        </div>
+        <a href="#contact" class="prog-link"><span class="ms">Tempah Sesi</span><span class="en">Book Session</span> →</a>
+      </div>
+
+      <div class="prog-card fade" style="transition-delay:.1s">
+        <div class="prog-icon">🕌</div>
+        <span class="prog-badge">Majelis Dzikir</span>
+        <h3><span class="ms">Majelis Dzikir As-Salam</span><span class="en">Majelis Dzikir As-Salam</span></h3>
+        <p class="ms">Majlis dzikir berjemaah dan usrah rohani di bawah bimbingan Guru Mursyid. Perkuat iman, suburkan hati, dan rasa kehadiran ALLAH dalam kehidupan seharian. Sertai ummah yang bergerak bersama.</p>
+        <p class="en">Communal dhikr gatherings and spiritual usrah under the Guru Mursyid's guidance. Strengthen faith, nourish the heart, and feel ALLAH's presence in daily life. Join an ummah moving together.</p>
+        <a href="#community" class="prog-link"><span class="ms">Sertai Majelis</span><span class="en">Join the Majelis</span> →</a>
+      </div>
+
+      <div class="prog-card fade" style="transition-delay:.15s">
+        <div class="prog-icon">📖</div>
+        <span class="prog-badge ms">Setiap Ahad Malam</span>
+        <span class="prog-badge en">Every Sunday Night</span>
+        <h3>Kuliah Hakikat</h3>
+        <p class="ms">Kuliah mingguan tentang ilmu hakikat, tasawuf, dan cara mendekatkan diri kepada ALLAH melalui dzikir dan amalan. Setiap Ahad malam, secara online & onsite. Ilmu yang mengubah hati, bukan sekadar hafalan.</p>
+        <p class="en">Weekly lecture on the knowledge of hakikat, tasawuf, and drawing closer to ALLAH through dhikr and practice. Every Sunday night, online & onsite. Knowledge that transforms hearts, not mere memorisation.</p>
+        <div class="prog-meta">
+          <span class="prog-price">RM50</span>
+          <span class="prog-freq ms">/ bulan</span>
+          <span class="prog-freq en">/ month</span>
+        </div>
+        <a href="#contact" class="prog-link"><span class="ms">Daftar</span><span class="en">Register</span> →</a>
+      </div>
+
+      <div class="prog-card premium fade" style="transition-delay:.2s">
+        <div>
+          <div class="prog-icon" style="background:rgba(201,168,76,.08);border-color:rgba(201,168,76,.3)">🏥</div>
+          <span class="prog-badge" style="background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.3)">Rawatan Premium · SNC</span>
+          <h3><span class="ms">Rawatan Premium<br>Rawatan SNC</span><span class="en">Premium Healing<br>Rawatan SNC</span></h3>
+          <p class="ms">Untuk mereka yang menghadapi penyakit kronik atau kritikal yang berpanjangan. Sesi rawatan intensif bersama Syeikh — menyeluruh, rohani dan jasmani. Memerlukan konsultasi awal. Dengan izin ALLAH, tiada penyakit yang tiada penyembuhnya.</p>
+          <p class="en">For those facing chronic or critical, long-standing illness. Intensive sessions with the Syeikh — body and soul. Initial consultation required. By ALLAH's will, no illness is without its cure.</p>
+          <a href="#contact" class="prog-link"><span class="ms">Mohon Konsultasi</span><span class="en">Request Consultation</span> →</a>
+        </div>
+        <div>
+          <div class="hadith-block" style="padding:1.8rem">
+            <div class="hadith-arabic" style="font-size:1.3rem">مَا أَنْزَلَ اللَّهُ دَاءً<br>إِلَّا أَنْزَلَ لَهُ شِفَاءً</div>
+            <div class="hadith-divider"></div>
+            <div class="hadith-trans" style="font-size:.95rem">
+              <span class="ms">"ALLAH tidak menurunkan sesuatu penyakit melainkan Dia turunkan juga ubatnya."</span>
+              <span class="en">"ALLAH has not sent down a disease except He has also sent down its cure."</span>
+            </div>
+            <div class="hadith-src">HR Bukhari</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════ STORE / PRODUCTS ══════ -->
+<section id="store" class="section">
+  <div class="w">
+    <div class="store-head fade">
+      <p class="s-eye ms">PRODUK KAMI</p>
+      <p class="s-eye en">OUR PRODUCTS</p>
+      <span class="gold-line"></span>
+      <h2><span class="ms">Bawa Pulang<br><em>Keberkatan</em></span><span class="en">Bring Home the<br><em>Barakah</em></span></h2>
+      <p class="store-sub ms">Produk yang diolah dengan dzikir, ayat-ayat suci, dan doa — sebagai ikhtiar rohani untuk ketenangan jiwa dan keberkatan rumah. Dihantar ke seluruh Malaysia.</p>
+      <p class="store-sub en">Products prepared with dhikr, Quranic verses, and prayer — as a spiritual means for inner calm and a blessed home. Delivered nationwide across Malaysia.</p>
+    </div>
+
+    <div class="store-grid fade" style="transition-delay:.1s">
+
+      <!-- PRODUCT: Air Dzikir As-Salam -->
+      <div class="product-card">
+        <div class="pc-media">
+          <!-- TODO: replace SVG with a real product photo → <img src="URL" alt="Air Dzikir As-Salam"> -->
+          <svg class="pc-bottle" viewBox="0 0 60 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Air Dzikir As-Salam">
+            <defs><linearGradient id="bgrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8cb7a"/><stop offset="1" stop-color="#c9a84c"/></linearGradient></defs>
+            <rect x="24" y="5" width="12" height="9" rx="2" stroke="url(#bgrad)" stroke-width="2"/>
+            <path d="M22 14h16v5l4 9v55a6 6 0 0 1-6 6H24a6 6 0 0 1-6-6V28l4-9v-5z" stroke="url(#bgrad)" stroke-width="2" fill="rgba(201,168,76,.05)"/>
+            <rect x="19" y="44" width="22" height="32" rx="3" fill="rgba(201,168,76,.10)" stroke="rgba(201,168,76,.3)"/>
+            <text x="30" y="65" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="13" fill="#e8cb7a">ذِكْر</text>
+          </svg>
+        </div>
+        <div class="pc-body">
+          <span class="prog-badge ms">✓ Tersedia</span>
+          <span class="prog-badge en">✓ Available</span>
+          <h3>Air Dzikir As-Salam</h3>
+          <p class="ms">Air yang dibacakan dzikir, ayat-ayat suci Al-Quran, dan doa oleh Syeikh kami. Diminum sebagai ikhtiar rohani untuk ketenangan dan kesembuhan — dengan izin ALLAH.</p>
+          <p class="en">Water over which dhikr, Quranic verses, and prayers are recited by our Syeikh. Taken as a spiritual means for calm and healing — by the will of ALLAH.</p>
+
+          <div class="bundle-row">
+            <button class="bundle on" data-qty="1" data-price="30" onclick="selBundle(this)">
+              <span class="b-left"><span class="b-radio"></span><span class="ms">1 Botol</span><span class="en">1 Bottle</span></span>
+              <span class="b-price">RM30</span>
+            </button>
+            <button class="bundle" data-qty="2" data-price="55" onclick="selBundle(this)">
+              <span class="b-left"><span class="b-radio"></span><span class="ms">2 Botol</span><span class="en">2 Bottles</span><span class="b-save ms">Jimat RM5</span><span class="b-save en">Save RM5</span></span>
+              <span class="b-price">RM55</span>
+            </button>
+            <button class="bundle" data-qty="3" data-price="75" onclick="selBundle(this)">
+              <span class="b-left"><span class="b-radio"></span><span class="ms">3 Botol</span><span class="en">3 Bottles</span><span class="b-save ms">Jimat RM15</span><span class="b-save en">Save RM15</span></span>
+              <span class="b-price">RM75</span>
+            </button>
+          </div>
+
+          <div class="pc-total">
+            <span class="ms">Jumlah:</span><span class="en">Total:</span>
+            <strong>RM<span id="airTotal">30</span></strong>
+            <span class="pc-ship ms">+ penghantaran</span><span class="pc-ship en">+ shipping</span>
+          </div>
+
+          <div class="pc-actions">
+            <button class="btn-buy" disabled style="opacity:.55; cursor:not-allowed;"><span class="ms">Akan Datang</span><span class="en">Coming Soon</span></button>
+            <button class="btn-wa-order" onclick="waProduct('air')" aria-label="WhatsApp">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.116 1.528 5.845L.057 23.7a.75.75 0 00.92.92l5.855-1.471A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+              WhatsApp
+            </button>
+          </div>
+          <p class="pc-hint ms">Alamat penghantaran diambil selepas bayaran / melalui WhatsApp.</p>
+          <p class="pc-hint en">Delivery address collected after payment / via WhatsApp.</p>
+        </div>
+      </div>
+
+      <!-- COMING SOON -->
+      <div class="product-card soon">
+        <div class="pc-soon">
+          <div class="soon-glyph">✦</div>
+          <h3><span class="ms">Lebih Banyak Akan Datang</span><span class="en">More Coming Soon</span></h3>
+          <p class="ms">Produk keberkatan baharu sedang disediakan — minyak, madu, dan lagi. Mahu jadi yang pertama tahu?</p>
+          <p class="en">New blessed products are on the way — oils, honey, and more. Want to be the first to know?</p>
+          <a href="#contact" class="prog-link"><span class="ms">Beritahu Saya</span><span class="en">Notify Me</span> →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="store-note">🔒 <b><span class="ms">Bayaran selamat melalui CHIP</span><span class="en">Secure payment via CHIP</span></b> · <span class="ms">Penghantaran seluruh Malaysia melalui EasyParcel</span><span class="en">Nationwide delivery via EasyParcel</span></p>
+  </div>
+</section>
+
+<!-- ══════ COMMUNITY ══════ -->
+<section id="community" class="section">
+  <div class="w">
+    <div class="community-inner">
+      <div class="cm-l fade">
+        <p class="s-eye ms">SERTAI KOMUNITI</p>
+        <p class="s-eye en">JOIN THE COMMUNITY</p>
+        <span class="gold-line"></span>
+        <h2>
+          <span class="ms">Ambil <em>Talqin Dzikir</em><br>di Bawah Guru Mursyid</span>
+          <span class="en">Take <em>Talqin Dzikir</em><br>Under the Guru Mursyid</span>
+        </h2>
+        <p class="ms">Menyertai Majelis Dzikir As-Salam bukan sekadar hadir ke majlis. Ia bermula dengan mengambil <strong>Talqin Dzikir</strong> — bimbingan dan ijazah dzikir secara langsung daripada Guru Mursyid kami, Syeikh yang menjadi penyambung silsilah ilmu hingga ke Rasulullah ﷺ.</p>
+        <p class="en">Joining Majelis Dzikir As-Salam is not merely attending a gathering. It begins by taking <strong>Talqin Dzikir</strong> — direct guidance and ijazah of dhikr from our Guru Mursyid, the Syeikh who is a continuing link in the chain of knowledge back to Rasulullah ﷺ.</p>
+        <p class="ms">Melalui talqin ini, anda menjadi sebahagian daripada komuniti yang bergerak bersama menuju ALLAH — bukan bersendirian.</p>
+        <p class="en">Through this talqin, you become part of a community moving together towards ALLAH — not alone.</p>
+        <div class="talqin-steps">
+          <div class="ts">
+            <div class="ts-n">١</div>
+            <div class="ts-txt">
+              <h5><span class="ms">Hubungi Kami</span><span class="en">Contact Us</span></h5>
+              <p class="ms">Nyatakan hasrat untuk mengambil talqin dzikir.</p>
+              <p class="en">Express your intention to take talqin dzikir.</p>
+            </div>
+          </div>
+          <div class="ts">
+            <div class="ts-n">٢</div>
+            <div class="ts-txt">
+              <h5><span class="ms">Sesi dengan Guru Mursyid</span><span class="en">Session with Guru Mursyid</span></h5>
+              <p class="ms">Temui Syeikh secara langsung untuk bimbingan dan ijazah dzikir.</p>
+              <p class="en">Meet the Syeikh in person for guidance and ijazah of dhikr.</p>
+            </div>
+          </div>
+          <div class="ts">
+            <div class="ts-n">٣</div>
+            <div class="ts-txt">
+              <h5><span class="ms">Sertai Majelis</span><span class="en">Join the Majelis</span></h5>
+              <p class="ms">Jadilah sebahagian daripada komuniti yang bergerak bersama menuju ALLAH.</p>
+              <p class="en">Become part of a community moving together towards ALLAH.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cm-r fade" style="transition-delay:.15s">
+        <div class="majelis-card">
+          <span class="mc-eye ms">MAJELIS DZIKIR AS-SALAM</span>
+          <span class="mc-eye en">MAJELIS DZIKIR AS-SALAM</span>
+          <h3><span class="ms">Bersama Menuju<br>ALLAH</span><span class="en">Together Towards<br>ALLAH</span></h3>
+          <p class="ms">Komuniti kami bukan sekadar kumpulan biasa. Kami adalah satu jamaah yang terikat dengan dzikrullah, bimbingan Guru Mursyid, dan tekad bersama untuk mendekatkan diri kepada ALLAH.</p>
+          <p class="en">Our community is not an ordinary group. We are a jamaah bound by dhikrullah, the guidance of a Guru Mursyid, and a shared resolve to draw closer to ALLAH.</p>
+          <a href="https://wa.me/60137030155" target="_blank" class="join-wa">
+            <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.116 1.528 5.845L.057 23.7a.75.75 0 00.92.92l5.855-1.471A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+            <span class="ms">Hubungi untuk Talqin</span>
+            <span class="en">Contact for Talqin</span>
+          </a>
+          <div class="majelis-hadith">
+            <span class="ms">"Tiada suatu kaum yang duduk bersama berzikir kepada ALLAH melainkan malaikat mengelilingi mereka, rahmat meliputi mereka, dan ketenangan turun ke atas mereka."</span>
+            <span class="en">"No group sits together remembering ALLAH except the angels surround them, mercy envelops them, and tranquility descends upon them."</span>
+            <cite>— HR Muslim</cite>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CHARITY ══════ -->
+<section id="charity" class="section">
+  <div class="w">
+    <div class="charity-top fade">
+      <p class="s-eye ms">SEDEKAH JARIAH</p>
+      <p class="s-eye en">ONGOING CHARITY</p>
+      <span class="gold-line" style="margin:.8rem auto 1rem"></span>
+      <h2><span class="ms">Suburkan Timbangan<br><em>Akhirat Anda</em></span><span class="en">Multiply Your Scale<br><em>of the Hereafter</em></span></h2>
+      <p class="ms">Pilih sebab yang ingin anda dukung. Setiap ringgit anda menggerakkan program rawatan, pendidikan Islam, dan dakwah yang memberi impak nyata.</p>
+      <p class="en">Choose a cause you want to support. Every ringgit you contribute drives healing programs, Islamic education, and dakwah with real impact.</p>
+    </div>
+
+    <div class="charity-layout fade" style="transition-delay:.1s">
+      <div class="cause-card active" data-cause="Salam Berkat Box" onclick="selectCause(this)">
+        <div class="cause-emoji">📦</div>
+        <h4>Salam Berkat Box</h4>
+        <p class="ms">Kotak keberkatan bulanan untuk keluarga yang memerlukan — makanan, keperluan asas, dan doa.</p>
+        <p class="en">Monthly blessings box for families in need — food, essentials, and prayers.</p>
+      </div>
+      <div class="cause-card" data-cause="Madrasah Tahfiz" onclick="selectCause(this)">
+        <div class="cause-emoji">📚</div>
+        <h4>Madrasah Tahfiz</h4>
+        <p class="ms">Sokong pengajian para penghafaz Al-Quran — kerana setiap ayat yang dihafaz adalah pahala bersama.</p>
+        <p class="en">Support the studies of Quran memorisers — because every verse memorised is shared reward.</p>
+      </div>
+      <div class="cause-card" data-cause="Dakwah Majelis Dzikir As-Salam" onclick="selectCause(this)">
+        <div class="cause-emoji">📢</div>
+        <h4>Dakwah Majelis Dzikir As-Salam</h4>
+        <p class="ms">Kos perjalanan, program, dan aktiviti dakwah Majelis Dzikir As-Salam di seluruh Malaysia.</p>
+        <p class="en">Travel costs, programs, and dakwah activities of Majelis Dzikir As-Salam across Malaysia.</p>
+      </div>
+      <div class="cause-card" data-cause="Sedekah Talqin Dzikir" onclick="selectCause(this)">
+        <div class="cause-emoji">🤲</div>
+        <h4>Sedekah Talqin Dzikir</h4>
+        <p class="ms">Bantu anak yatim dan golongan yang tidak mampu mendapat talqin dzikir dan rawatan rohani percuma.</p>
+        <p class="en">Help orphans and the underprivileged receive free talqin dzikir and spiritual healing.</p>
+      </div>
+    </div>
+
+    <div class="pay-widget fade" style="transition-delay:.2s">
+      <h3>🌙 <span class="ms">Sedekah untuk:</span><span class="en">Donate for:</span> <span id="payLabel">Salam Berkat Box</span></h3>
+
+      <div class="amt-grid">
+        <button class="ab" data-a="10">RM10</button>
+        <button class="ab" data-a="30">RM30</button>
+        <button class="ab on" data-a="50">RM50</button>
+        <button class="ab" data-a="100">RM100</button>
+        <button class="ab" data-a="200">RM200</button>
+        <button class="ab" data-a="500">RM500</button>
+      </div>
+      <div class="custom-input-row">
+        <span class="ci-prefix">RM</span>
+        <input type="number" id="custAmt" placeholder="Amaun lain / Other amount" min="1">
+      </div>
+      <input type="text" class="pw-field" id="donorName" placeholder="Nama / Name">
+      <input type="tel" class="pw-field" id="donorPhone" placeholder="No. Phone / Phone Number">
+      <div class="pmethods">
+        <span class="pm-badge">🏦 FPX</span>
+        <span class="pm-badge">💳 Visa/MC</span>
+        <span class="pm-badge">📱 TNG</span>
+        <span class="pm-badge">📱 GrabPay</span>
+        <span class="pm-badge">📱 Boost</span>
+      </div>
+      <button class="btn-pay" onclick="handlePay()">
+        <span class="ms">✦ Teruskan Sedekah</span>
+        <span class="en">✦ Proceed to Donate</span>
+      </button>
+      <p class="pay-secure">🔒 <span class="ms">Selamat melalui CHIP</span><span class="en">Secure via CHIP</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CONTACT ══════ -->
+<section id="contact" class="section">
+  <div class="w">
+    <div class="contact-wrap">
+      <div class="ct-l fade">
+        <p class="s-eye ms">DAFTAR & PERTANYAAN</p>
+        <p class="s-eye en">REGISTER & ENQUIRE</p>
+        <span class="gold-line"></span>
+        <h2><span class="ms">Mulakan<br><em>Perjalanan Anda</em></span><span class="en">Begin<br><em>Your Journey</em></span></h2>
+        <p class="ms">Isi borang ini dan kami akan menghubungi anda melalui WhatsApp dalam masa 24 jam, in sha ALLAH.</p>
+        <p class="en">Fill in this form and we'll reach out via WhatsApp within 24 hours, in sha ALLAH.</p>
+        <form class="cform" id="cForm" novalidate>
+          <div class="f2r">
+            <div class="fg"><label><span class="ms">Nama</span><span class="en">Name</span></label><input type="text" name="name" placeholder="Ahmad bin Ali" required></div>
+            <div class="fg"><label><span class="ms">No. Telefon</span><span class="en">Phone</span></label><input type="tel" name="phone" placeholder="+60 12-345 6789" required></div>
+          </div>
+          <div class="fg">
+            <label><span class="ms">Program / Keperluan</span><span class="en">Program / Need</span></label>
+            <select name="program">
+              <option value="" disabled selected>--</option>
+              <option>Rawatan Dzikir Terapi</option>
+              <option>Majelis Dzikir As-Salam</option>
+              <option>Kuliah Hakikat</option>
+              <option>Rawatan Premium (Rawatan SNC)</option>
+              <option>Talqin Dzikir</option>
+              <option>Air Dzikir As-Salam (Produk)</option>
+              <option>Sedekah / Wakaf</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label><span class="ms">Mesej</span><span class="en">Message</span></label>
+            <textarea name="msg" placeholder="..."></textarea>
+          </div>
+          <button type="submit" class="btn-send">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.116 1.528 5.845L.057 23.7a.75.75 0 00.92.92l5.855-1.471A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+            <span class="ms">Hantar via WhatsApp</span>
+            <span class="en">Send via WhatsApp</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="ct-r fade" style="transition-delay:.15s">
+        <p class="s-eye ms">HUBUNGI KAMI</p>
+        <p class="s-eye en">CONTACT US</p>
+        <span class="gold-line"></span>
+        <p class="ms">Kami sedia membantu. Hubungi kami terus melalui WhatsApp untuk pertanyaan pantas.</p>
+        <p class="en">We're ready to help. Reach out directly via WhatsApp for quick enquiries.</p>
+        <a href="https://wa.me/60137030155" target="_blank" class="wa-big">
+          <svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.116 1.528 5.845L.057 23.7a.75.75 0 00.92.92l5.855-1.471A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+          <span class="ms">WhatsApp Kami</span>
+          <span class="en">WhatsApp Us</span>
+        </a>
+        <div class="ct-details">
+          <div class="ctd"><div class="ctd-icon">🌐</div><div><strong>dzikirassalam.com</strong><span><span class="ms">Laman Web Rasmi</span><span class="en">Official Website</span></span></div></div>
+          <div class="ctd"><div class="ctd-icon">📧</div><div><strong>admin@dzikirassalam.com</strong><span>Email</span></div></div>
+          <div class="ctd"><div class="ctd-icon">📍</div><div><strong>Gelugor, Pulau Pinang</strong><span>3000A, Jalan Sultan Azlan Shah, Century Garden, 11700 · <a href="https://share.google/F146CzhuCYGCmyb7D" target="_blank" rel="noopener" style="color:var(--gold2)"><span class="ms">Peta</span><span class="en">Map</span> →</a><br><span class="ms">Temujanji sahaja · Seluruh Malaysia & dalam talian</span><span class="en">By appointment only · Nationwide & online</span></span></div></div>
+        </div>
+        <div class="logger-box">
+          <h5>🔐 <span class="ms">Portal Ahli & Admin</span><span class="en">Member & Admin Portal</span></h5>
+          <p class="ms">Log masuk ke sistem pengurusan As-Salam Logger.</p>
+          <p class="en">Access the As-Salam Logger management system.</p>
+          <a href="https://logger.ahader.cloud" target="_blank">logger.ahader.cloud →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FOOTER ══════ -->
+<footer>
+  <div class="w">
+    <div class="foot-inner">
+      <div class="fi-brand">
+        <div class="ft-name">Rawatan Dzikir As-Salam</div>
+        <div class="ft-sub">Majelis Dzikir As-Salam · dzikirassalam.com</div>
+        <p class="ms">Rawatan Islam melalui Dzikir Terapi — mendekatkan diri kepada ALLAH, menyembuhkan jiwa, dan menggerakkan ummah bersama.</p>
+        <p class="en">Islamic healing through Dhikr Therapy — drawing closer to ALLAH, healing souls, and moving the ummah together.</p>
+      </div>
+      <div>
+        <h5><span class="ms">PROGRAM</span><span class="en">PROGRAMS</span></h5>
+        <ul>
+          <li><a href="#programs">Rawatan Dzikir Terapi</a></li>
+          <li><a href="#community">Majelis Dzikir As-Salam</a></li>
+          <li><a href="#programs">Kuliah Hakikat</a></li>
+          <li><a href="#programs">Rawatan Premium SNC</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5><span class="ms">PAUTAN</span><span class="en">LINKS</span></h5>
+        <ul>
+          <li><a href="#store"><span class="ms">Produk · Air Dzikir</span><span class="en">Store · Air Dzikir</span></a></li>
+          <li><a href="#charity"><span class="ms">Bersedekah</span><span class="en">Donate</span></a></li>
+          <li><a href="#contact"><span class="ms">Hubungi Kami</span><span class="en">Contact Us</span></a></li>
+          <li><a href="https://logger.ahader.cloud" target="_blank">Logger Portal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-hr"></div>
+    <div class="foot-bottom">
+      <p class="foot-copy">© 2026 Pusat Rawatan Dzikir As-Salam Worldwide · <span class="ms">Hak Cipta Terpelihara</span><span class="en">All Rights Reserved</span></p>
+      <p class="foot-verse"><span class="ms">"Sedekah · Dakwah · Sembuh"</span><span class="en">"Donate · Spread · Heal"</span></p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/60137030155" target="_blank" id="fwa" aria-label="WhatsApp">
+  <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.556 4.116 1.528 5.845L.057 23.7a.75.75 0 00.92.92l5.855-1.471A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+</a>
+
+<script>
+// ── CONFIG ──────────────────────────────────
+const WA = '60137030155';
+const PAY = {
+  'Salam Berkat Box':                'https://pay.chip-in.asia/salamberkatbox',
+  'Madrasah Tahfiz':                 'https://pay.chip-in.asia/madrasahtahfiz',
+  'Dakwah Majelis Dzikir As-Salam':  'SOON',
+  'Sedekah Talqin Dzikir':           'SOON',
+};
+
+// ── PARTICLE SYSTEM ─────────────────────────
+(function(){
+  const c = document.getElementById('particles');
+  const ctx = c.getContext('2d');
+  let w, h, pts = [];
+  function resize(){ w = c.width = window.innerWidth; h = c.height = window.innerHeight; }
+  resize(); window.addEventListener('resize', resize);
+  function rand(min,max){ return Math.random()*(max-min)+min; }
+  function mkPt(){
+    return {
+      x: rand(0,w), y: rand(0,h),
+      r: rand(.8,2.5),
+      vx: rand(-.2,.2), vy: rand(-.4,-.1),
+      a: rand(.1,.6), da: rand(.001,.003),
+      gold: Math.random() > .3
+    };
+  }
+  for(let i=0;i<80;i++) pts.push(mkPt());
+  function frame(){
+    ctx.clearRect(0,0,w,h);
+    pts.forEach((p,i)=>{
+      p.x += p.vx; p.y += p.vy; p.a += p.da;
+      if(p.a > .6) p.da = -Math.abs(p.da);
+      if(p.a < .02) p.da = Math.abs(p.da);
+      if(p.y < -10) { pts[i] = mkPt(); pts[i].y = h+10; }
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle = p.gold
+        ? `rgba(201,168,76,${p.a})`
+        : `rgba(180,140,255,${p.a*.5})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
+
+// ── NAV SCROLL ──────────────────────────────
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', ()=> nav.classList.toggle('solid', window.scrollY > 60));
+
+// ── LANGUAGE ────────────────────────────────
+const html = document.documentElement;
+document.querySelectorAll('.lb').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const l=b.dataset.l;
+    html.setAttribute('data-lang',l); html.setAttribute('lang',l);
+    document.querySelectorAll('.lb').forEach(x=>x.classList.toggle('on',x===b));
+    localStorage.setItem('rda-lang',l);
+  });
+});
+const sl=localStorage.getItem('rda-lang');
+if(sl){ html.setAttribute('data-lang',sl); html.setAttribute('lang',sl);
+  document.querySelectorAll('.lb').forEach(b=>b.classList.toggle('on',b.dataset.l===sl)); }
+
+// ── HAMBURGER ───────────────────────────────
+const hbg=document.getElementById('hbg'), mnav=document.getElementById('mnav');
+hbg.addEventListener('click',()=>{ hbg.classList.toggle('open'); mnav.classList.toggle('open'); });
+function closeM(){ hbg.classList.remove('open'); mnav.classList.remove('open'); }
+document.addEventListener('click',e=>{ if(!hbg.contains(e.target)&&!mnav.contains(e.target)) closeM(); });
+
+// ── SCROLL FADE ─────────────────────────────
+const io = new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+},{threshold:.1});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+
+// ── AMOUNT BUTTONS ──────────────────────────
+let selAmt = 50;
+document.querySelectorAll('.ab').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.ab').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on'); selAmt = parseInt(b.dataset.a);
+    document.getElementById('custAmt').value='';
+  });
+});
+document.getElementById('custAmt').addEventListener('input',e=>{
+  document.querySelectorAll('.ab').forEach(x=>x.classList.remove('on'));
+  selAmt = parseInt(e.target.value)||0;
+});
+
+// ── CAUSE SELECTION ─────────────────────────
+let selCause = 'Salam Berkat Box';
+function selectCause(el){
+  document.querySelectorAll('.cause-card').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  selCause = el.dataset.cause;
+  document.getElementById('payLabel').textContent = selCause;
+}
+
+// ── PAYMENT ─────────────────────────────────
+function handlePay(){
+  const link = PAY[selCause] || PAY['Salam Berkat Box'];
+  if(!link || link === 'SOON'){
+    const lang = html.getAttribute('data-lang');
+    alert(lang==='en'
+      ? 'This cause will open soon, in sha ALLAH. For now, please reach us on WhatsApp to give.'
+      : 'Sebab ini akan dibuka tidak lama lagi, in sha ALLAH. Buat masa ini, hubungi kami di WhatsApp untuk bersedekah.');
+    return;
+  }
+  window.open(link,'_blank');
+}
+
+// ── STORE / PRODUCTS ───────────────────────
+// Extensible product config — add new products here as you launch them.
+const PRODUCTS = {
+  air: {
+    name: 'Air Dzikir A
