@@ -321,7 +321,7 @@ html[data-lang="en"] .ms { display: none !important; }
 .charity-top h2 em { font-style: normal; color: var(--gold); }
 .charity-top p { font-size: .92rem; color: var(--wm); margin-top: .9rem; line-height: 1.8; }
 
-.charity-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
+.charity-layout { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
 .cause-card {
   background: rgba(255,255,255,.03); border: 1px solid var(--wl);
   border-radius: var(--r2); padding: 1.6rem; cursor: pointer;
@@ -661,7 +661,7 @@ footer ul a:hover { color: var(--gold2); }
     </div>
     <div class="prog-grid">
 
-      <div class="prog-card fade" style="transition-delay:.05s">
+      <div class="prog-card fade" style="transition-delay:.05s; grid-column:span 2">
         <div class="prog-icon">🌿</div>
         <span class="prog-badge ms">Program Utama</span>
         <span class="prog-badge en">Flagship</span>
@@ -675,29 +675,6 @@ footer ul a:hover { color: var(--gold2); }
         <a href="https://pay.chip-in.asia/rawatandzikirterapi" target="_blank" rel="noopener" class="prog-link"><span class="ms">Tempah Sesi</span><span class="en">Book Session</span> →</a>
       </div>
 
-      <div class="prog-card fade" style="transition-delay:.1s">
-        <div class="prog-icon">🕌</div>
-        <span class="prog-badge">Majelis Dzikir</span>
-        <h3><span class="ms">Majelis Dzikir As-Salam</span><span class="en">Majelis Dzikir As-Salam</span></h3>
-        <p class="ms">Majlis dzikir berjemaah dan usrah rohani di bawah bimbingan Guru Mursyid. Perkuat iman, suburkan hati, dan rasa kehadiran ALLAH dalam kehidupan seharian. Sertai ummah yang bergerak bersama.</p>
-        <p class="en">Communal dhikr gatherings and spiritual usrah under the Guru Mursyid's guidance. Strengthen faith, nourish the heart, and feel ALLAH's presence in daily life. Join an ummah moving together.</p>
-        <a href="#community" class="prog-link"><span class="ms">Sertai Majelis</span><span class="en">Join the Majelis</span> →</a>
-      </div>
-
-      <div class="prog-card fade" style="transition-delay:.15s">
-        <div class="prog-icon">📖</div>
-        <span class="prog-badge ms">Setiap Ahad Malam</span>
-        <span class="prog-badge en">Every Sunday Night</span>
-        <h3>Kuliah Hakikat</h3>
-        <p class="ms">Kuliah mingguan tentang ilmu hakikat, tasawuf, dan cara mendekatkan diri kepada ALLAH melalui dzikir dan amalan. Setiap Ahad malam, secara online & onsite. Ilmu yang mengubah hati, bukan sekadar hafalan.</p>
-        <p class="en">Weekly lecture on the knowledge of hakikat, tasawuf, and drawing closer to ALLAH through dhikr and practice. Every Sunday night, online & onsite. Knowledge that transforms hearts, not mere memorisation.</p>
-        <div class="prog-meta">
-          <span class="prog-price">RM50</span>
-          <span class="prog-freq ms">/ bulan</span>
-          <span class="prog-freq en">/ month</span>
-        </div>
-        <a href="#contact" class="prog-link"><span class="ms">Daftar</span><span class="en">Register</span> →</a>
-      </div>
 
       <div class="prog-card premium fade" style="transition-delay:.2s">
         <div>
@@ -871,6 +848,37 @@ footer ul a:hover { color: var(--gold2); }
         </div>
       </div>
     </div>
+
+    <div class="prog-head fade" style="text-align:center; margin-top:1rem">
+      <p class="s-eye ms">AKTIVITI &amp; PENGAJIAN</p>
+      <p class="s-eye en">ACTIVITIES &amp; LEARNING</p>
+      <span class="gold-line"></span>
+      <h2><span class="ms">Sertai Majelis &amp;<br><em>Perdalam Ilmu</em></span><span class="en">Join the Majelis &amp;<br><em>Deepen Your Knowledge</em></span></h2>
+    </div>
+    <div class="prog-grid" style="margin-top:2rem">
+      <div class="prog-card fade" style="transition-delay:.05s">
+        <div class="prog-icon">🕌</div>
+        <span class="prog-badge">Majelis Dzikir</span>
+        <h3><span class="ms">Majelis Dzikir As-Salam</span><span class="en">Majelis Dzikir As-Salam</span></h3>
+        <p class="ms">Majlis dzikir berjemaah dan usrah rohani di bawah bimbingan Guru Mursyid Syeikh Muhammad Syahrum Alfan. Perkuat iman, suburkan hati, dan rasa kehadiran ALLAH dalam kehidupan seharian. Sertai ummah yang bergerak bersama.</p>
+        <p class="en">Communal dhikr gatherings and spiritual usrah under the guidance of Guru Mursyid Syeikh Muhammad Syahrum Alfan. Strengthen faith, nourish the heart, and feel ALLAH's presence in daily life. Join an ummah moving together.</p>
+        <a href="https://wa.me/60137030155" target="_blank" rel="noopener" class="prog-link"><span class="ms">Sertai Majelis</span><span class="en">Join the Majelis</span> →</a>
+      </div>
+      <div class="prog-card fade" style="transition-delay:.1s">
+        <div class="prog-icon">📖</div>
+        <span class="prog-badge ms">Setiap Ahad Malam</span>
+        <span class="prog-badge en">Every Sunday Night</span>
+        <h3>Kuliah Hakikat</h3>
+        <p class="ms">Kuliah mingguan tentang ilmu hakikat, tasawuf, dan cara mendekatkan diri kepada ALLAH melalui dzikir dan amalan. Setiap Ahad malam, secara online & onsite. Ilmu yang mengubah hati, bukan sekadar hafalan.</p>
+        <p class="en">Weekly lecture on the knowledge of hakikat, tasawuf, and drawing closer to ALLAH through dhikr and practice. Every Sunday night, online & onsite. Knowledge that transforms hearts, not mere memorisation.</p>
+        <div class="prog-meta">
+          <span class="prog-price">RM50</span>
+          <span class="prog-freq ms">/ bulan</span>
+          <span class="prog-freq en">/ month</span>
+        </div>
+        <a href="#contact" class="prog-link"><span class="ms">Daftar</span><span class="en">Register</span> →</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -904,12 +912,6 @@ footer ul a:hover { color: var(--gold2); }
         <h4>Dakwah Majelis Dzikir As-Salam</h4>
         <p class="ms">Kos perjalanan, program, dan aktiviti dakwah Majelis Dzikir As-Salam di seluruh Malaysia.</p>
         <p class="en">Travel costs, programs, and dakwah activities of Majelis Dzikir As-Salam across Malaysia.</p>
-      </div>
-      <div class="cause-card" data-cause="Sedekah Talqin Dzikir" onclick="selectCause(this)">
-        <div class="cause-emoji">🤲</div>
-        <h4>Sedekah Talqin Dzikir</h4>
-        <p class="ms">Bantu anak yatim dan golongan yang tidak mampu mendapat talqin dzikir dan rawatan rohani percuma.</p>
-        <p class="en">Help orphans and the underprivileged receive free talqin dzikir and spiritual healing.</p>
       </div>
     </div>
 
@@ -1019,7 +1021,7 @@ footer ul a:hover { color: var(--gold2); }
         <ul>
           <li><a href="#programs">Rawatan Dzikir Terapi</a></li>
           <li><a href="#community">Majelis Dzikir As-Salam</a></li>
-          <li><a href="#programs">Kuliah Hakikat</a></li>
+          <li><a href="#community">Kuliah Hakikat</a></li>
           <li><a href="#programs">Rawatan Premium SNC</a></li>
         </ul>
       </div>
@@ -1052,7 +1054,6 @@ const PAY = {
   'Salam Berkat Box':                'https://pay.chip-in.asia/salamberkatbox',
   'Madrasah Tahfiz':                 'https://pay.chip-in.asia/madrasahtahfiz',
   'Dakwah Majelis Dzikir As-Salam':  'SOON',
-  'Sedekah Talqin Dzikir':           'SOON',
 };
 
 // ── PARTICLE SYSTEM ─────────────────────────
