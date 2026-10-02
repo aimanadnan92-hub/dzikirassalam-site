@@ -494,7 +494,16 @@ html:not([data-live="live"]) .when-live, html[data-live="live"] .when-off { disp
   .dock-main .btn[aria-hidden="true"] { opacity: 0; transform: translateY(6px) scale(.98); filter: blur(2px); pointer-events: none; visibility: hidden; }
   .dock-ask { width: 54px; padding: 0; }
 }
-@media (max-width: 360px) { .dock-main .btn { font-size: .9375rem; padding: 0 .8em; } }
+/* Phone dock: the booking label and WhatsApp mark sized to share one row without overlap */
+@media (max-width: 1060px) {
+  .dock { grid-template-columns: minmax(0, 1fr) 48px; gap: 8px; }
+  .dock-main { min-width: 0; }
+  .dock-main .btn { min-height: 48px; min-width: 0; padding: 0 .9em; gap: .45em; font-size: .8125rem; overflow: hidden; }
+  .dock-main .btn svg { width: 1.05em; height: 1.05em; }
+  .dock-ask { width: 48px; min-height: 48px; }
+  .dock-ask svg { width: 1.15em; height: 1.15em; }
+}
+@media (max-width: 370px) { .dock-main .btn { font-size: .75rem; padding: 0 .75em; } }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
