@@ -28,6 +28,7 @@ Edit `../site-src/`, never the built pages here:
 - `site-src/pages/*.html`: page content. `[[BM||EN]]` writes both languages; `{{BTN:book}}`,
   `{{LINK:/path/|BM|EN}}`, `{{WA:key}}`, `{{SAW}}` are shortcuts (see the top of `build.py`).
 - `site-src/site.css`, `site-src/site.js`: shared style and behaviour.
+- Footer team WhatsApp numbers: `FOOTER_TEAM` near `footer()` in `build.py` (name, wa.me number, shown number).
 - Then run `python site-src/build.py` from `02_Dzikir AsSalam Website_Project/`.
 
 The output is plain static HTML; nothing runs on the server.
@@ -66,4 +67,6 @@ see the change on their next page load.
 - `seal-*.webp`, favicons: cut from the official emblem (`05_Brand.../assets/masters/logo-emblem.jpeg`).
 - `hero-doa-*.webp`: MVP5-1's hero photograph (`05_Brand.../assets/web/hero-dua-lightrays-compressed.webp`).
   **AI-generated** (hands raised in doa); replace with a real As-Salam photograph when one exists.
-- `og-image.jpg`: composed from the seal and brand fonts.
+- `og-v8.jpg`: the WhatsApp/Facebook share preview (1200x630), composed from the hero photo, the hero
+  headline in Gelasio, the RM150 pill and the seal. If you change it, use a NEW filename and update
+  `build.py`: WhatsApp caches previews per image URL.
