@@ -46,10 +46,20 @@ http://localhost:3130 (also saved as `website-v7` in the hub's `.claude/launch.j
 
 ## Deploying
 
-Not deployed. Production is still `../deploy/index.html` (mvp3). This folder carries its own
-`Dockerfile` + `nginx.conf` (clean URLs: `/rawatan/` serves `rawatan/index.html`). Point the
-Coolify app at this folder, or copy its contents into `../deploy/` including the new Dockerfile.
-Version 7 is archived in `../archive/site-v7-2026-10-02/`.
+**Live since 2 Oct 2026** (commit `ac85bc6`) at https://dzikirassalam.com.
+Production repo: `aimanadnan92-hub/dzikirassalam-site` (Coolify app `website`, uuid
+`vksscgsg4w0ck000ss4ksgs0`, Dockerfile build at the repo root). The old `../deploy/` folder is
+obsolete (it held mvp3 and is not the repo).
+
+1. `python site-src/build.py`
+2. Clone the repo, replace everything except `.git` with the contents of `site/`, commit, push to `main`.
+3. **The push webhook does not trigger a build** (known Coolify GitHub-app issue). Trigger it:
+   `GET https://coolify.ahader.cloud/api/v1/deploy?uuid=vksscgsg4w0ck000ss4ksgs0` with the token in
+   `12_Rawatan-AI_Project/.coolify-token`, then check `/api/v1/deployments/<deployment_uuid>`.
+
+**Switching TikTok LIVE on/off:** edit `assets/js/config.js` (`tiktokLive.status`: `"live"` or
+`"offline"`) in the repo and deploy as above. nginx serves `config.js` with `no-cache`, so visitors
+see the change on their next page load.
 
 ## Image provenance
 
