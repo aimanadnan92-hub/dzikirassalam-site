@@ -1,7 +1,8 @@
 // Run Lighthouse on the live site and append a compact summary to a history file.
 //   node scripts/lighthouse-record.mjs <history.json>
 // Used by .github/workflows/lighthouse.yml (daily); the owner dashboard reads the file from the
-// lighthouse-data branch. Keeps the last 120 runs. Scores are 0..1 as Lighthouse reports them.
+// lighthouse-data branch. Keeps the last 120 runs. Scores are 0..1 as Lighthouse reports them;
+// each page/form is the median of 3 runs.
 import { execSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
@@ -16,14 +17,18 @@ mkdirSync('.lighthouse', { recursive: true });
 const results = [];
 for (const path of PATHS) {
   for (const form of ['mobile', 'desktop']) {
-    let r = null;
-    for (let attempt = 1; attempt <= 3 && !r; attempt++) {
+    // Single Lighthouse runs on shared CI machines are noisy: take the run with the median
+    // performance score out of 3 good runs (Lighthouse's own variability guidance).
+    const good = [];
+    for (let attempt = 1; attempt <= 6 && good.length < 3; attempt++) {
       try {
         execSync(`npx -y lighthouse@12 "${LIVE}${path}" --quiet --chrome-flags="--headless=new --no-sandbox" ${form === 'desktop' ? '--preset=desktop' : ''} --output=json --output-path="${TMP}"`, { stdio: 'inherit' });
         const j = JSON.parse(readFileSync(TMP, 'utf8'));
-        if (!j.runtimeError && j.categories.performance.score !== null) r = j;
+        if (!j.runtimeError && j.categories.performance.score !== null) good.push(j);
       } catch { /* retry */ }
     }
+    good.sort((x, y) => x.categories.performance.score - y.categories.performance.score);
+    const r = good.length ? good[Math.floor(good.length / 2)] : null;
     const c = r?.categories, a = r?.audits;
     results.push({
       path, form,
