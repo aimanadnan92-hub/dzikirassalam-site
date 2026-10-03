@@ -31,6 +31,10 @@ DOMAIN = 'https://dzikirassalam.com'
 WA_NUMBER = '60137030155'
 TIKTOK = 'https://www.tiktok.com/@rawatan.assalam'
 TIKTOK_PRODUCTS = 'https://www.tiktok.com/@rawatanassalam2'
+# Search engine ownership checks: paste only the content="..." value each console gives you
+# (Google Search Console > HTML tag; Bing Webmaster Tools > Meta tag). They are public, not secrets.
+GOOGLE_SITE_VERIFICATION = None
+BING_SITE_VERIFICATION = None
 WA_GROUP_URL = 'https://chat.whatsapp.com/BvhJQwIugFgFlZB7ALGay7'  # TikTok Live announcement group (also in assets/js/config.js)
 
 WA_MESSAGES = {
@@ -327,6 +331,7 @@ def page(meta, body, body_src=''):
     index_meta = ('<meta name="robots" content="noindex">' if noindex else
                   f'<link rel="canonical" href="{DOMAIN}{path}">\n<meta property="og:url" content="{DOMAIN}{path}">')
     jsonld = JSONLD if home else ('' if noindex else breadcrumb_jsonld(path, body_src))
+    verify = ''.join(f'<meta name="{n}" content="{v}">\n' for n, v in (('google-site-verification', GOOGLE_SITE_VERIFICATION), ('msvalidate.01', BING_SITE_VERIFICATION)) if v and home)
     return f'''<!doctype html>
 <html lang="ms" data-lang="ms">
 <head>
@@ -334,7 +339,7 @@ def page(meta, body, body_src=''):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="{CSP}">
 <title>{title}</title>
-<meta name="description" content="{desc}">
+{verify}<meta name="description" content="{desc}">
 {index_meta}
 <meta name="theme-color" content="#fefdfa">
 <meta name="color-scheme" content="light">

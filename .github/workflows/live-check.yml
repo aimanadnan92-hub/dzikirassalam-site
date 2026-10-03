@@ -14,6 +14,25 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      # A push to GitHub does not deploy by itself (npm run deploy does). This fails when the live
+      # pages differ from a fresh build of the latest commit: "pushed but never deployed".
+      - name: Live pages match the latest commit
+        run: |
+          python site-src/build.py
+          python - <<'EOF'
+          import re, sys, urllib.request
+          paths = re.findall(r'<loc>https://dzikirassalam.com(/[^<]*)</loc>', open('site/sitemap.xml').read())
+          stale = []
+          for p in paths:
+              live = urllib.request.urlopen('https://dzikirassalam.com' + p).read()
+              built = open('site' + p + 'index.html', 'rb').read()
+              if live != built:
+                  stale.append(p)
+          print('checked', len(paths), 'pages; differ:', stale or 'none')
+          sys.exit(1 if stale else 0)
+          EOF
       - uses: actions/setup-node@v4
         with: { node-version: 22, cache: npm }
       - run: npm ci
