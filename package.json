@@ -1,0 +1,17 @@
+{
+  "name": "dzikirassalam-site",
+  "private": true,
+  "description": "dzikirassalam.com: static site source, tests and deploy script",
+  "scripts": {
+    "build": "python site-src/build.py",
+    "serve": "python site-src/build.py && node tests/server.mjs",
+    "test": "python site-src/build.py && playwright test",
+    "test:prod": "playwright test",
+    "lighthouse": "node scripts/lighthouse.mjs",
+    "deploy": "node scripts/deploy.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0"
+  }
+}
