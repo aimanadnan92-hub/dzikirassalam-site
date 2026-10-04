@@ -90,7 +90,7 @@ test.describe('analytics', () => {
   test('nothing is loaded or sent when there is no website id, or the visitor opted out', async ({ page }) => {
     // The shared fixture sets the opt-out flag, so this holds on the live site even with analytics on.
     const calls: string[] = [];
-    page.on('request', (r) => { if (/umami/.test(r.url())) calls.push(r.url()); });
+    page.on('request', (r) => { if (/umami|pulse\.ahader\.cloud/.test(r.url())) calls.push(r.url()); });
     await page.goto('/');
     await page.waitForLoadState('networkidle');
     expect(calls).toEqual([]);
@@ -100,10 +100,10 @@ test.describe('analytics', () => {
     test.skip(info.project.name !== 'desktop', 'event mapping is the same on every screen');
     // Turn analytics on with a test id and stand in for the Umami script (nothing leaves the machine).
     await page.route('**/assets/js/config.js', async (route) => {
-      const body = (await (await route.fetch()).text()).replace('umamiWebsiteId: null', 'umamiWebsiteId: "test-site"');
+      const body = (await (await route.fetch()).text()).replace(/umamiWebsiteId: [^,\n]+/, 'umamiWebsiteId: "test-site"');
       await route.fulfill({ body, contentType: 'application/javascript' });
     });
-    await page.route('https://cloud.umami.is/script.js', (route) => route.fulfill({
+    await page.route('https://pulse.ahader.cloud/insight.js', (route) => route.fulfill({
       contentType: 'application/javascript',
       body: 'window.__events = []; window.umami = { track: (n, d) => window.__events.push([n, d]) };',
     }));

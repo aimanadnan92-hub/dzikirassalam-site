@@ -80,16 +80,18 @@ npm run lighthouse    # speed, accessibility, best practices, SEO scores (phone 
 
 Logs: Coolify → website → **Logs** (nginx access/error log) and **Deployments** (build logs).
 
-## 4. Analytics (Umami Cloud, cookieless)
+## 4. Analytics (self-hosted Umami, cookieless)
 
-The site already contains everything; it is **off** until a website id is set.
+Analytics is **on** (since 4 Oct 2026). Umami runs on the AHADER Coolify server at
+https://pulse.ahader.cloud (Coolify service `umami-analytics`, project Company; its own Postgres).
+Umami Cloud's free plan has no API, which the owner dashboard needs, so it was self-hosted instead.
 
-Turn on (once):
-1. Aiman: sign up at https://cloud.umami.is (free Hobby plan) and add website `dzikirassalam.com`.
-2. Copy the **Website ID** (Settings → Websites → Edit) into `analytics.umamiWebsiteId` in `config.js`.
-3. Commit, `npm run deploy`.
-4. On your own phone/PC, stop counting yourself: open the site, browser console,
-   `localStorage.setItem('umami.disabled', '1')`.
+- Website id and script address: `analytics` in `site-src/static/assets/js/config.js`. Set
+  `umamiWebsiteId` to `null` to switch analytics off.
+- The tracker is served as `insight.js` (a neutral name, so fewer ad blockers drop it).
+- Umami web login: user `admin`, password in `14_Owner-Dashboard_Project/secrets.env` (`UMAMI_PASSWORD`).
+- Stop counting yourself on your own phone/PC: open the site, browser console,
+  `localStorage.setItem('umami.disabled', '1')`.
 
 What is counted automatically: visitors, page views, referrers (traffic sources), landing pages,
 countries, devices. Custom events (clicks, not completed bookings):
@@ -112,7 +114,7 @@ Each event carries `location` (which button, e.g. `hero`, `dock`, `footer`), `pa
 Suggested funnel (Umami → Reports → Funnel): page view `/` → `cta_treatment_rm150`.
 A click opens WhatsApp; whether a booking followed is only known in WhatsApp/the logger.
 
-Free plan limits: 100k events/month, 6 months of history, 1 website. The site is far below this.
+No plan limits: the data stays on the AHADER server and is backed up with its database (see section 6).
 
 ## 5. Search engines
 
@@ -154,7 +156,7 @@ copy) and the Coolify settings listed above. There is no data to back up.
    `https://dzikirassalam.com/` (expect keyword `RM150`). The other apps on the VPS fit in the same
    free plan. (UptimeRobot's free plan no longer allows commercial sites; a self-hosted Uptime Kuma
    on the same VPS could not report the VPS itself going down.)
-2. **Analytics:** section 4, steps 1 and 2.
+2. **Analytics:** done 4 Oct 2026 (self-hosted Umami, section 4).
 3. **Google Search Console:** https://search.google.com/search-console → Add property →
    *URL prefix* `https://dzikirassalam.com/` → method *HTML tag* → send the `content="..."` value
    (not a secret). It goes into `GOOGLE_SITE_VERIFICATION`, gets deployed, then press **Verify**.

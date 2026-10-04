@@ -151,7 +151,7 @@
   if (analytics.umamiWebsiteId) {
     const s = document.createElement('script');
     s.defer = true;
-    s.src = 'https://cloud.umami.is/script.js';
+    s.src = analytics.umamiScript || 'https://pulse.ahader.cloud/insight.js'; // self-hosted Umami (AHADER)
     s.dataset.websiteId = analytics.umamiWebsiteId;
     s.dataset.domains = 'dzikirassalam.com'; // local previews and test runs are never counted
     s.addEventListener('load', () => { while (queue.length && window.umami) window.umami.track(...queue.shift()); });

@@ -19,11 +19,11 @@ window.ASSALAM_CONFIG = {
   // liveSchedule: { ms: "Setiap Khamis, 9:15 malam", en: "Every Thursday, 9:15pm" },
   liveSchedule: null,
 
-  // Visitor analytics (Umami Cloud, no cookies). Paste the Website ID from the Umami dashboard
-  // (Settings > Websites > Edit, a long id like "a1b2c3d4-..."). While null, nothing is loaded or sent.
-  // Event names and what they mean: docs/WEBSITE-OPERATIONS.md.
+  // Visitor analytics: self-hosted Umami at https://pulse.ahader.cloud (no cookies, no personal data).
+  // Set umamiWebsiteId to null to switch analytics off. Event names: docs/WEBSITE-OPERATIONS.md.
   analytics: {
-    umamiWebsiteId: null
+    umamiWebsiteId: "34edc7e8-f26d-4719-8819-715e660f7bb4",
+    umamiScript: "https://pulse.ahader.cloud/insight.js"
   },
 
   // Booking and payment: "whatsapp" today. See docs/PAYMENTS.md before changing.

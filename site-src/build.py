@@ -33,7 +33,7 @@ TIKTOK = 'https://www.tiktok.com/@rawatan.assalam'
 TIKTOK_PRODUCTS = 'https://www.tiktok.com/@rawatanassalam2'
 # Search engine ownership checks: paste only the content="..." value each console gives you
 # (Google Search Console > HTML tag; Bing Webmaster Tools > Meta tag). They are public, not secrets.
-GOOGLE_SITE_VERIFICATION = None
+GOOGLE_SITE_VERIFICATION = "PSTR0LFJIn_ELAkvZpnSvvB4GcK8yvvi2e1xhTp12_s"
 BING_SITE_VERIFICATION = None
 WA_GROUP_URL = 'https://chat.whatsapp.com/BvhJQwIugFgFlZB7ALGay7'  # TikTok Live announcement group (also in assets/js/config.js)
 
@@ -270,9 +270,9 @@ BOOT_SCRIPTS = [
     "try { if (localStorage.getItem('assalam-lang') === 'en') { document.documentElement.dataset.lang = 'en'; document.documentElement.lang = 'en'; } } catch (e) {}",
 ]
 
-# Analytics (Umami Cloud, cookieless): where its script loads from and where it reports to.
-ANALYTICS_SCRIPT_HOST = 'https://cloud.umami.is'
-ANALYTICS_CONNECT_HOSTS = ['https://gateway.umami.is', 'https://cloud.umami.is']
+# Analytics (self-hosted Umami, cookieless): where its script loads from and where it reports to.
+ANALYTICS_SCRIPT_HOST = 'https://pulse.ahader.cloud'  # self-hosted Umami on the AHADER Coolify server
+ANALYTICS_CONNECT_HOSTS = ['https://pulse.ahader.cloud']
 # If config.js gets a tiktokLive.endpoint or checkout.endpoint, add that origin here or the browser blocks the call.
 EXTRA_CONNECT_HOSTS = []
 
