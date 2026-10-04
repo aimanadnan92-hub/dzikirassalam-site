@@ -19,6 +19,7 @@ export const TIKTOK_SHOP = 'https://www.tiktok.com/@rawatanassalam2';
 // Every public page (the sitemap must list exactly these).
 export const PAGES = [
   '/', '/faq/', '/majelis/', '/perjalanan/', '/produk/', '/rawatan/', '/sedekah/', '/talqin/', '/tentang/', '/tiktok-live/',
+  '/privacy/', '/refund-policy/', '/terms/',
 ];
 
 export const isProd = (baseURL?: string) => !!baseURL && !baseURL.includes('127.0.0.1');

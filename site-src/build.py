@@ -39,13 +39,13 @@ WA_GROUP_URL = 'https://chat.whatsapp.com/BvhJQwIugFgFlZB7ALGay7'  # TikTok Live
 
 WA_MESSAGES = {
     'book': 'Assalamualaikum. Saya ingin mendapatkan Ikhtiar Rawatan Personal RM150. Mohon bantu saya untuk mendapatkan slot rawatan.',
-    'ask': 'Assalamualaikum. Saya ada soalan tentang Rawatan Dzikir As-Salam. Mohon bantu saya.',
+    'ask': 'Assalamualaikum. Saya ada soalan tentang Rawatan Dzikir Terapi. Mohon bantu saya.',
     'pkg': 'Assalamualaikum. Saya ingin menempah pakej 3 Sesi Rawatan Dzikir Terapi RM399. Mohon bantu saya untuk mendapatkan slot rawatan.',
-    'group': 'Assalamualaikum. Saya ingin menyertai WhatsApp Group untuk makluman sesi TikTok Live As-Salam.',
+    'group': 'Assalamualaikum. Saya ingin menyertai WhatsApp Group untuk makluman sesi TikTok Live Pusat Rawatan As-Salam.',
     'talqin': 'Assalamualaikum. Saya ingin bertanya tentang Talqin Dzikir. Mohon bantu saya.',
     'kuliah': 'Assalamualaikum. Saya ingin bertanya tentang Kuliah Hakikat. Mohon bantu saya.',
     'majelis': 'Assalamualaikum. Saya ingin bertanya tentang Majelis Dzikir As-Salam. Mohon bantu saya.',
-    'dakwah': 'Assalamualaikum. Saya ingin menyumbang untuk Dakwah Majelis As-Salam. Mohon bantu saya.',
+    'dakwah': 'Assalamualaikum. Saya ingin menyumbang untuk Dakwah Majelis Dzikir As-Salam. Mohon bantu saya.',
 }
 
 
@@ -88,7 +88,7 @@ def btn(kind, cta='', cls=''):
         return f'<a class="btn {cls or "btn-secondary"}"{data} target="_blank" rel="noopener" href="{TIKTOK}">{icon("tt")}{bi("Rawatan Percuma di TikTok Live", "Free treatment on TikTok Live")}</a>'
     if kind == 'follow':
         return (f'<a class="btn {cls or "btn-secondary"} tt-follow"{data} target="_blank" rel="noopener" href="{TIKTOK}">{icon("tt")}'
-                f'<span class="when-off">{bi("Ikuti TikTok As-Salam", "Follow As-Salam on TikTok")}</span>'
+                f'<span class="when-off">{bi("Ikuti TikTok Kami", "Follow us on TikTok")}</span>'
                 f'<span class="when-live">{bi("Tonton LIVE di TikTok", "Watch LIVE on TikTok")}</span></a>')
     if kind == 'group':
         return f'<a class="btn {cls or "btn-secondary"}"{data} data-wa-group target="_blank" rel="noopener" href="{WA_GROUP_URL}">{icon("wa")}{bi("Sertai WhatsApp Group", "Join the WhatsApp Group")}</a>'
@@ -109,6 +109,7 @@ def expand(html):
     html = html.replace('{{SAW}}', '&nbsp;<span class="saw">ﷺ</span>')
     html = html.replace('{{AYAH}}', 'وَإِذَا مَرِضْتُ فَهُوَ يَشْفِينِ')
     html = html.replace('{{LIVESTATUS}}', LIVE_STATUS)
+    html = re.sub(r'\{\{POLICYCARD:([\w-]+)\}\}', lambda m: policy_card(m.group(1)), html)
     html = html.replace('{{TIKTOK}}', TIKTOK).replace('{{TIKTOK_PRODUCTS}}', TIKTOK_PRODUCTS)
     html = re.sub(r'\{\{WA:(\w+)\}\}', lambda m: wa(m.group(1)), html)
     html = re.sub(r'\{\{I:([\w-]+)\}\}', lambda m: icon(m.group(1), 'chev' if m.group(1) == 'chev' else ''), html)
@@ -126,6 +127,16 @@ ICONS = '''<svg width="0" height="0" style="position:absolute" aria-hidden="true
   <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h10"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-chev-r" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7l8.5 6.2L20.5 7"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s-7-6.1-7-11.6a7 7 0 0 1 14 0c0 5.5-7 11.6-7 11.6z"/><circle cx="12" cy="9.8" r="2.6"/></g></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19.5C4.6 10.8 10 5 20 4.5c.4 9.6-5.3 15.2-15 15z"/><path d="M5 19.5l8-8"/></g></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 20v-1.2A4.8 4.8 0 0 1 10.3 14h3.4a4.8 4.8 0 0 1 4.8 4.8V20"/><circle cx="5" cy="9.5" r="2.2"/><path d="M1.5 18.5v-.6A3.4 3.4 0 0 1 4.9 14.5"/><circle cx="19" cy="9.5" r="2.2"/><path d="M22.5 18.5v-.6a3.4 3.4 0 0 0-3.4-3.4"/></g></symbol>
+  <symbol id="i-laptop" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19.5h20"/></g></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10.3 5 7.7 4.5 3 4.8v13.6c4.7-.3 7.3.2 9 1.6 1.7-1.4 4.3-1.9 9-1.6V4.8c-4.7-.3-7.3.2-9 1.7z"/><path d="M12 6.5V20"/></g></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.6 15.6V8.4l6.3 3.6z"/></symbol>
+  <symbol id="i-lt" viewBox="0 0 24 24"><path fill="currentColor" d="M13.736 5.853l4.005-4.117 2.325 2.381-4.201 4.005h5.909v3.305h-5.937l4.229 4.108-2.325 2.334-5.741-5.769-5.741 5.769-2.325-2.325 4.229-4.108H2.226V8.122h5.909L3.934 4.117l2.325-2.381 4.005 4.117V0h3.472zm-3.472 10.306h3.472V24h-3.472z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/></g><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></symbol>
 </svg>'''
 
 NAV = [
@@ -179,53 +190,111 @@ def header(nav):
 </dialog>'''
 
 
-# Team WhatsApp lines in the footer (names and numbers from mvp5-1-light.html)
+# Team WhatsApp lines in the footer (names and numbers confirmed in the CHIP policy brief, 4 Oct 2026)
 FOOTER_TEAM = [('Solah', '601140344764', '+60 11-4034 4764'),
                ('Firdaus', '60103648864', '+60 10-364 8864'),
                ('Anuar', '60169341909', '+60 16-934 1909'),
                ('Asma', '60162880503', '+60 16-288 0503')]
+YOUTUBE = 'https://www.youtube.com/@RawatanDzikirAs-Salam'
+LINKTREE = 'https://linktr.ee/DzikirAsSalam'
+MAP_URL = 'https://share.google/F146CzhuCYGCmyb7D'
+# Confirmed channels only. No Instagram account exists yet (4 Oct 2026); when it does, add
+# ('Instagram', 'ig', 'https://www.instagram.com/<handle>') here: the i-ig icon is already defined.
+SOCIALS = [('TikTok', 'tt', TIKTOK), ('YouTube', 'yt', YOUTUBE), ('Linktree', 'lt', LINKTREE)]
+# (href, footer label, BM title, EN title)
+POLICIES = [('/privacy/', 'Privacy / Notis Privasi', 'Notis Privasi', 'Privacy Notice'),
+            ('/refund-policy/', 'Refund Policy / Polisi Bayaran Balik', 'Polisi Pembatalan &amp; Bayaran Balik', 'Cancellation &amp; Refund Policy'),
+            ('/terms/', 'Terms &amp; Conditions / Terma &amp; Syarat', 'Terma &amp; Syarat', 'Terms &amp; Conditions')]
+CHEV_R = '<svg class="chev-r" aria-hidden="true"><use href="#i-chev-r"/></svg>'
+EXT = ' target="_blank" rel="noopener"'
+
+
+def foot_links(items):
+    return ''.join(f'<li><a href="{href}"><span>{label}</span>{CHEV_R}</a></li>' for href, label in items)
+
+
+def foot_contact(href, ic, main, sub, cls='', ext=True):
+    c = f' {cls}' if cls else ''
+    return (f'<li><a class="foot-contact{c}" href="{href}"{EXT if ext else ""}>{icon(ic, "fc-ic")}'
+            f'<span class="fc-txt"><b>{main}</b><small>{sub}</small></span>{CHEV_R}</a></li>')
 
 
 def footer():
-    team = '\n        '.join(f'<li><a class="foot-person" target="_blank" rel="noopener" href="https://wa.me/{n}"><b>{name}</b> <span>{shown}</span></a></li>'
-                             for name, n, shown in FOOTER_TEAM)
+    services = foot_links([
+        ('/rawatan/', 'Rawatan Dzikir Terapi'),
+        ('/rawatan/#pakej', bi('Pakej 3 sesi', '3-session package')),
+        ('/tiktok-live/', 'TikTok Live'),
+        ('/perjalanan/', bi('Perjalanan', 'The journey')),
+    ])
+    majelis = foot_links([
+        ('/tentang/', bi('Tentang Kami', 'About us')),
+        ('/talqin/', 'Talqin Dzikir'),
+        ('/majelis/', bi('Majelis &amp; Ilmu', 'Majelis &amp; knowledge')),
+        ('/produk/', bi('Produk', 'Products')),
+        ('/sedekah/', bi('Sedekah &amp; Amal Jariah', 'Sedekah &amp; charity')),
+        ('/faq/', bi('Soalan Lazim / FAQ', 'FAQ')),
+    ])
+    contact = ''.join([
+        foot_contact(wa('ask'), 'wa', '+60 13-703 0155', bi('Pertanyaan umum &amp; tempahan slot', 'General enquiries &amp; booking')),
+        *(foot_contact(f'https://wa.me/{n}', 'wa', shown, name) for name, n, shown in FOOTER_TEAM),
+        foot_contact('mailto:admin@dzikirassalam.com', 'mail', 'admin@dzikirassalam.com', bi('Pertanyaan bertulis', 'Written enquiries'), 'is-alt is-split', ext=False),
+        foot_contact(MAP_URL, 'pin', bi('Gelugor, Pulau Pinang', 'Gelugor, Penang'), bi('Temujanji sahaja', 'By appointment only'), 'is-alt'),
+    ])
+    socials = ''.join(f'<li><a href="{url}"{EXT}>{icon(ic, "sc-ic sc-" + ic)}<span>{name}</span>{CHEV_R}</a></li>' for name, ic, url in SOCIALS)
+    mini = ''.join(f'<a href="{url}"{EXT} aria-label="{name}">{icon(ic, "sc-ic sc-" + ic)}</a>' for name, ic, url in SOCIALS)
+    legal = ''.join(f'<a href="{href}">{label}</a>' for href, label, _, _ in POLICIES)
+    facts = ''.join(f'<li>{icon(ic)}<span>{bi(ms, en)}</span></li>' for ic, ms, en in (
+        ('leaf', 'Sejak 2015', 'Since 2015'),
+        ('users', 'Bimbingan Syeikh', 'The Syeikh’s guidance'),
+        ('laptop', 'Online &amp; bersemuka', 'Online &amp; in person'),
+        ('book', 'Majelis &amp; ilmu', 'Majelis &amp; knowledge')))
+    about = bi('Di bawah Majelis Dzikir As-Salam. Rawatan, ilmu, dakwah dan sedekah, sejak 2015.',
+               'Under Majelis Dzikir As-Salam. Healing, knowledge, dakwah and sedekah, since 2015.')
     return f'''<footer class="site-footer">
-  <div class="wrap">
+  <div class="foot-wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="/assets/img/seal-160.webp" width="56" height="56" alt="" loading="lazy">
-        <strong translate="no">Pusat Rawatan As-Salam</strong>
-        <p>{bi("Di bawah Majelis Dzikir As-Salam. Rawatan, ilmu, dakwah dan sedekah, sejak 2015.", "Under Majelis Dzikir As-Salam. Healing, knowledge, dakwah and sedekah, since 2015.")}</p>
+        <a class="foot-logo" href="/">
+          <img src="/assets/img/seal-160.webp" srcset="/assets/img/seal-160.webp 160w, /assets/img/seal-320.webp 320w" sizes="92px" width="92" height="92" alt="" loading="lazy">
+          <span translate="no"><strong>Pusat Rawatan As-Salam</strong><small>Majelis Dzikir As-Salam</small></span>
+        </a>
+        <p class="foot-about">{about}</p>
+        <ul class="foot-facts">{facts}</ul>
       </div>
-      <div><h2>{bi("Rawatan", "Treatment")}</h2><ul>
-        <li><a href="/rawatan/">Rawatan Dzikir Terapi</a></li>
-        <li><a href="/rawatan/#pakej">{bi("Pakej 3 sesi", "3-session package")}</a></li>
-        <li><a href="/tiktok-live/">TikTok Live</a></li>
-        <li><a href="/perjalanan/">{bi("Perjalanan", "The journey")}</a></li>
-      </ul></div>
-      <div><h2>As-Salam</h2><ul>
-        <li><a href="/tentang/">{bi("Tentang As-Salam", "About As-Salam")}</a></li>
-        <li><a href="/talqin/">Talqin Dzikir</a></li>
-        <li><a href="/majelis/">{bi("Majelis &amp; Ilmu", "Majelis &amp; knowledge")}</a></li>
-        <li><a href="/produk/">{bi("Produk", "Products")}</a></li>
-        <li><a href="/sedekah/">{bi("Sedekah &amp; Amal Jariah", "Sedekah &amp; charity")}</a></li>
-        <li><a href="/faq/">{bi("Soalan lazim", "FAQ")}</a></li>
-      </ul></div>
-      <div><h2>{bi("Hubungi", "Contact")}</h2><ul>
-        <li><a target="_blank" rel="noopener" href="{wa("ask")}">WhatsApp +60 13-703 0155</a></li>
-        {team}
-        <li><a href="mailto:admin@dzikirassalam.com">admin@dzikirassalam.com</a></li>
-        <li><a target="_blank" rel="noopener" href="https://share.google/F146CzhuCYGCmyb7D">{bi("Gelugor, Pulau Pinang · temujanji", "Gelugor, Penang · by appointment")}</a></li>
-      </ul></div>
-      <div><h2>{bi("Media Sosial", "Social media")}</h2><ul>
-        <li><a target="_blank" rel="noopener" href="{TIKTOK}">TikTok</a></li>
-        <li><a target="_blank" rel="noopener" href="https://www.youtube.com/@RawatanDzikirAs-Salam">YouTube</a></li>
-        <li><a target="_blank" rel="noopener" href="https://linktr.ee/DzikirAsSalam">Linktree</a></li>
-      </ul></div>
+      <nav class="foot-col" aria-labelledby="ft-svc"><h2 id="ft-svc">{bi("Perkhidmatan", "Services")}</h2><ul class="foot-links">{services}</ul></nav>
+      <nav class="foot-col" aria-labelledby="ft-maj"><h2 id="ft-maj" translate="no">Majelis Dzikir As-Salam</h2><ul class="foot-links">{majelis}</ul></nav>
+      <div class="foot-col"><h2>{bi("Hubungi Kami", "Contact us")}</h2><ul class="foot-contacts">{contact}</ul></div>
+      <div class="foot-col"><h2>{bi("Media Sosial", "Social media")}</h2><ul class="foot-links foot-social">{socials}</ul></div>
     </div>
-    <div class="legal"><span>© 2026 Dzikir Assalam Worldwide · SSM 202603062910 (KT0609580-A)</span><span>Majelis Dzikir As-Salam</span></div>
+    <div class="foot-bottom">
+      <nav class="foot-legal" aria-label="Polisi / Policies">{legal}</nav>
+      <div class="foot-end">
+        <div class="foot-mini">{mini}</div>
+        <p class="foot-copy">© 2026 Dzikir Assalam Worldwide<br>SSM 202603062910 (KT0609580-A)</p>
+      </div>
+    </div>
   </div>
 </footer>'''
+
+
+def policy_card(slug):
+    """Business identity and the other policies, beside each policy page."""
+    others = ''.join(f'<li><a href="{href}"{" aria-current=\"page\"" if href.strip("/") == slug else ""}><span>{bi(ms, en)}</span>{CHEV_R}</a></li>'
+                     for href, _, ms, en in POLICIES)
+    rows = [
+        (bi('Nama awam', 'Public name'), '<span translate="no">Pusat Rawatan As-Salam</span>'),
+        (bi('Entiti berdaftar', 'Legal entity'), 'Dzikir Assalam Worldwide<br>SSM 202603062910 (KT0609580-A)'),
+        (bi('Telefon / WhatsApp', 'Phone / WhatsApp'), f'<a href="https://wa.me/{WA_NUMBER}"{EXT}>+60&nbsp;13-703&nbsp;0155</a>'),
+        (bi('E-mel', 'Email'), '<a href="mailto:admin@dzikirassalam.com">admin@dzikirassalam.com</a>'),
+        (bi('Laman web', 'Website'), '<a href="/">dzikirassalam.com</a>'),
+        (bi('Lokasi rawatan', 'Treatment location'), '3000A, Jalan Sultan Azlan Shah, Century Garden, 11700 Gelugor, Pulau Pinang, Malaysia<br>' + bi('Melalui temujanji', 'By appointment')),
+    ]
+    dl = ''.join(f'<div><dt>{k}</dt><dd>{v}</dd></div>' for k, v in rows)
+    return ('<aside class="policy-aside" aria-label="Maklumat perniagaan / Business details">'
+            f'<div class="policy-card"><h2 class="policy-card-h">{bi("Maklumat perniagaan", "Business details")}</h2><dl>{dl}</dl></div>'
+            f'<div class="policy-card"><h2 class="policy-card-h">{bi("Polisi kami", "Our policies")}</h2><ul class="foot-links policy-links">{others}</ul></div>'
+            '</aside>')
+
 
 
 def dock():

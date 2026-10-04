@@ -117,7 +117,7 @@ test.describe('analytics', () => {
     await page.locator('#live a[data-cta="live-group"]').click();
     await page.locator('#pakej [data-offer="rdt-3"]').click();
     await page.locator('.site-footer a[href^="https://wa.me/601140344764"]').click();
-    await page.locator('.site-footer a[href="https://www.youtube.com/@RawatanDzikirAs-Salam"]').click();
+    await page.locator('.foot-social a[href="https://www.youtube.com/@RawatanDzikirAs-Salam"]').click();
 
     const events = await page.evaluate(() => (window as any).__events);
     expect(events.map((e: any) => [e[0], e[1].location])).toEqual([
