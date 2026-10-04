@@ -44,6 +44,7 @@ WA_MESSAGES = {
     'group': 'Assalamualaikum. Saya ingin menyertai WhatsApp Group untuk makluman sesi TikTok Live Pusat Rawatan As-Salam.',
     'talqin': 'Assalamualaikum. Saya ingin bertanya tentang Talqin Dzikir. Mohon bantu saya.',
     'kuliah': 'Assalamualaikum. Saya ingin bertanya tentang Kuliah Hakikat. Mohon bantu saya.',
+    'rezeki': 'Assalamualaikum. Saya ingin bertanya tentang Program Dzikir Pembuka Pintu Rezeki. Mohon bantu saya.',
     'majelis': 'Assalamualaikum. Saya ingin bertanya tentang Majelis Dzikir As-Salam. Mohon bantu saya.',
     'dakwah': 'Assalamualaikum. Saya ingin menyumbang untuk Dakwah Majelis Dzikir As-Salam. Mohon bantu saya.',
 }
