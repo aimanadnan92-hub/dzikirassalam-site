@@ -22,11 +22,22 @@ jobs:
         run: |
           python site-src/build.py
           python - <<'EOF'
-          import re, sys, urllib.request
+          import re, sys, time, urllib.request
           paths = re.findall(r'<loc>https://dzikirassalam.com(/[^<]*)</loc>', open('site/sitemap.xml').read())
+
+          def fetch(url):
+              # 3 tries, 20 s each: one network blip is not an outage; a real outage still fails.
+              for attempt in range(3):
+                  try:
+                      return urllib.request.urlopen(url, timeout=20).read()
+                  except Exception as e:
+                      print(f'attempt {attempt + 1} for {url}: {e}')
+                      time.sleep(15)
+              raise SystemExit(f'{url} did not answer after 3 attempts')
+
           stale = []
           for p in paths:
-              live = urllib.request.urlopen('https://dzikirassalam.com' + p).read()
+              live = fetch('https://dzikirassalam.com' + p)
               built = open('site' + p + 'index.html', 'rb').read()
               if live != built:
                   stale.append(p)
