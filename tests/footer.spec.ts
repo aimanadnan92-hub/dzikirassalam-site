@@ -37,6 +37,7 @@ test('footer lists all five WhatsApp contacts, email and location', async ({ pag
   }
   await expect(foot.locator('a[href="mailto:admin@dzikirassalam.com"]')).toHaveCount(1);
   await expect(foot).toContainText('SSM 202603062910 (KT0609580-A)');
+  await expect(foot).toContainText('3000A, Jalan Sultan Azlan Shah');
 });
 
 test('footer social channels are the confirmed ones only, and no page names the wrong spellings', async ({ page }) => {
@@ -65,4 +66,43 @@ test('policy pages show the business identity and switch language', async ({ pag
   await expect(page.locator('.policy-doc > .en')).toBeVisible();
   await expect(page.locator('.policy-doc > .ms')).toBeHidden();
   await expect(page.locator('h1')).toContainText('Terms');
+});
+
+test('footer shows the full address and the appointment-only note', async ({ page }) => {
+  await page.goto('/');
+  const row = page.locator('.foot-contact.is-address');
+  await expect(row).toContainText('3000A, Jalan Sultan Azlan Shah');
+  await expect(row).toContainText('11700 Gelugor');
+  await expect(row).toContainText('Rawatan bersemuka melalui temujanji sahaja');
+});
+
+// The CHIP donation links are payment destinations: they must never change by accident.
+test('sedekah: CHIP links unchanged, donation status and terms link present (BM and EN)', async ({ page }) => {
+  await page.goto('/sedekah/');
+  await expect(page.locator('a[href="https://pay.chip-in.asia/salamberkatbox"]')).toHaveCount(1);
+  await expect(page.locator('a[href="https://pay.chip-in.asia/madrasahtahfiz"]')).toHaveCount(1);
+  const box = page.locator('.donation-terms');
+  await expect(box).toContainText('sukarela sepenuhnya');
+  await expect(box).toContainText('tidak layak dituntut sebagai pelepasan atau potongan cukai pendapatan');
+  await box.locator('a[href="/terms/#derma"]').click();
+  await expect(page).toHaveURL('/terms/#derma');
+  await expect(page.locator('#derma')).toBeVisible();
+
+  await page.evaluate(() => { localStorage.setItem('assalam-lang', 'en'); });
+  await page.goto('/sedekah/');
+  await expect(page.locator('.donation-terms')).toContainText('not currently eligible to be claimed as income tax relief');
+  await page.locator('.donation-terms a[href="/terms/#donations"]').click();
+  await expect(page.locator('#donations')).toBeVisible();
+});
+
+test('terms cover donations and monthly programmes separately from treatment refunds', async ({ page }) => {
+  await page.goto('/terms/');
+  await expect(page.locator('#derma')).toContainText('Sedekah dan sumbangan');
+  await expect(page.locator('#program-bulanan')).toContainText('Program bulanan');
+  const doc = page.locator('.policy-doc > .ms');
+  await expect(doc).toContainText('Program Kuliah Hakikat dan Program Dzikir Pembuka Pintu Rezeki');
+  await expect(doc).not.toContainText('tersedia di checkout');
+  await page.goto('/refund-policy/');
+  await expect(page.locator('.policy-doc > .ms')).toContainText('pautan pembayaran yang dihantar oleh pasukan kami');
+  await expect(page.locator('.policy-doc > .ms')).toContainText('RM133 bagi setiap sesi yang belum digunakan');
 });

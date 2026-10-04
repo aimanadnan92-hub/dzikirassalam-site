@@ -198,6 +198,7 @@ FOOTER_TEAM = [('Solah', '601140344764', '+60 11-4034 4764'),
 YOUTUBE = 'https://www.youtube.com/@RawatanDzikirAs-Salam'
 LINKTREE = 'https://linktr.ee/DzikirAsSalam'
 MAP_URL = 'https://share.google/F146CzhuCYGCmyb7D'
+ADDRESS_LINES = '3000A, Jalan Sultan Azlan Shah,<br>Century Garden, 11700 Gelugor,<br>Pulau Pinang, Malaysia'
 # Confirmed channels only. No Instagram account exists yet (4 Oct 2026); when it does, add
 # ('Instagram', 'ig', 'https://www.instagram.com/<handle>') here: the i-ig icon is already defined.
 SOCIALS = [('TikTok', 'tt', TIKTOK), ('YouTube', 'yt', YOUTUBE), ('Linktree', 'lt', LINKTREE)]
@@ -238,7 +239,7 @@ def footer():
         foot_contact(wa('ask'), 'wa', '+60 13-703 0155', bi('Pertanyaan umum &amp; tempahan slot', 'General enquiries &amp; booking')),
         *(foot_contact(f'https://wa.me/{n}', 'wa', shown, name) for name, n, shown in FOOTER_TEAM),
         foot_contact('mailto:admin@dzikirassalam.com', 'mail', 'admin@dzikirassalam.com', bi('Pertanyaan bertulis', 'Written enquiries'), 'is-alt is-split', ext=False),
-        foot_contact(MAP_URL, 'pin', bi('Gelugor, Pulau Pinang', 'Gelugor, Penang'), bi('Temujanji sahaja', 'By appointment only'), 'is-alt'),
+        foot_contact(MAP_URL, 'pin', ADDRESS_LINES, bi('Rawatan bersemuka melalui temujanji sahaja', 'In-person treatment by appointment only'), 'is-alt is-address'),
     ])
     socials = ''.join(f'<li><a href="{url}"{EXT}>{icon(ic, "sc-ic sc-" + ic)}<span>{name}</span>{CHEV_R}</a></li>' for name, ic, url in SOCIALS)
     mini = ''.join(f'<a href="{url}"{EXT} aria-label="{name}">{icon(ic, "sc-ic sc-" + ic)}</a>' for name, ic, url in SOCIALS)

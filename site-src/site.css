@@ -343,6 +343,12 @@ details[open] > summary .chev { transform: rotate(180deg); }
 @media (max-width: 520px) { .timeline li { grid-template-columns: minmax(0, 1fr); gap: 2px; } }
 /* 404 page: main pages as a plain list */
 .nf-links { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 14px; }
+.donation-terms { margin-top: 28px; padding: clamp(20px, 3vw, 28px); border-radius: var(--r-lg); background: #fff; border: 1px solid var(--sand-line); border-left: 3px solid var(--gold); }
+.donation-terms h3 { font: 600 1.45rem/1.2 var(--font-d); }
+.donation-terms p { margin-top: 10px; max-width: 72ch; }
+.donation-terms strong { color: var(--ink); font-weight: 600; }
+.donation-terms .fine { font-size: .9375rem; color: var(--muted); }
+.donation-terms a, .note a { color: var(--ink); text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: .25em; }
 .next { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; padding-top: 22px; margin-top: 8px; border-top: 1px solid var(--line); }
 
 /* ---------- v8.1: compact choice band, short trust layer, quiet explore row ---------- */
@@ -514,6 +520,8 @@ html:not([data-live="live"]) .when-live, html[data-live="live"] .when-off { disp
 .fc-txt small { display: block; margin-top: 2px; font-size: .8125rem; line-height: 1.35; color: var(--muted); }
 .foot-contact.is-alt b { font-weight: 600; font-size: .875rem; color: var(--ink); }
 .foot-contact.is-split { margin-top: 10px; border-top: 1px solid var(--line-2); }
+.foot-contact.is-address b { font-weight: 500; line-height: 1.45; }
+.foot-contact.is-address .fc-ic { align-self: flex-start; margin-top: 2px; }
 .sc-ic { width: 22px; height: 22px; flex: none; }
 .sc-tt { color: var(--ink); }
 .sc-yt { color: #e00; }
