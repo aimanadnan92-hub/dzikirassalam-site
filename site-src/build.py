@@ -35,6 +35,7 @@ TIKTOK_PRODUCTS = 'https://www.tiktok.com/@rawatanassalam2'
 # (Google Search Console > HTML tag; Bing Webmaster Tools > Meta tag). They are public, not secrets.
 GOOGLE_SITE_VERIFICATION = "PSTR0LFJIn_ELAkvZpnSvvB4GcK8yvvi2e1xhTp12_s"
 BING_SITE_VERIFICATION = None
+FACEBOOK_DOMAIN_VERIFICATION = "lzxj48hnmxrccrco7io1lkowzld8s7"  # Meta Business Manager > Domains (6 Oct 2026)
 WA_GROUP_URL = 'https://chat.whatsapp.com/BvhJQwIugFgFlZB7ALGay7'  # TikTok Live announcement group (also in assets/js/config.js)
 
 WA_MESSAGES = {
@@ -402,7 +403,7 @@ def page(meta, body, body_src=''):
     index_meta = ('<meta name="robots" content="noindex">' if noindex else
                   f'<link rel="canonical" href="{DOMAIN}{path}">\n<meta property="og:url" content="{DOMAIN}{path}">')
     jsonld = JSONLD if home else ('' if noindex else breadcrumb_jsonld(path, body_src))
-    verify = ''.join(f'<meta name="{n}" content="{v}">\n' for n, v in (('google-site-verification', GOOGLE_SITE_VERIFICATION), ('msvalidate.01', BING_SITE_VERIFICATION)) if v and home)
+    verify = ''.join(f'<meta name="{n}" content="{v}">\n' for n, v in (('google-site-verification', GOOGLE_SITE_VERIFICATION), ('msvalidate.01', BING_SITE_VERIFICATION), ('facebook-domain-verification', FACEBOOK_DOMAIN_VERIFICATION)) if v and home)
     return f'''<!doctype html>
 <html lang="ms" data-lang="ms">
 <head>
