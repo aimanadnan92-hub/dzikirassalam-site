@@ -42,7 +42,7 @@ There is **no database, no uploaded content, no environment variables and no sec
 6. confirms the live homepage is the new build and `/healthz` answers;
 7. runs the test suite against the live site.
 
-It needs the Coolify API token in `12_Rawatan-AI_Project/.coolify-token` on Aiman's PC
+It needs the Coolify API token in `09_Rawatan-AI/.coolify-token` on Aiman's PC
 (or `COOLIFY_TOKEN_FILE=...`). The token never goes into this repo.
 
 **Docs-only commits** (README, `docs/`) do not change the site; deploying them is optional.
@@ -89,7 +89,7 @@ Umami Cloud's free plan has no API, which the owner dashboard needs, so it was s
 - Website id and script address: `analytics` in `site-src/static/assets/js/config.js`. Set
   `umamiWebsiteId` to `null` to switch analytics off.
 - The tracker is served as `insight.js` (a neutral name, so fewer ad blockers drop it).
-- Umami web login: user `admin`, password in `14_Owner-Dashboard_Project/secrets.env` (`UMAMI_PASSWORD`).
+- Umami web login: user `admin`, password in `11_Owner-Dashboard/secrets.env` (`UMAMI_PASSWORD`).
 - Stop counting yourself on your own phone/PC: open the site, browser console,
   `localStorage.setItem('umami.disabled', '1')`.
 

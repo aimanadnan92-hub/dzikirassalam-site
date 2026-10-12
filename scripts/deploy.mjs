@@ -4,7 +4,7 @@
 // after a deploy, roll back (docs/WEBSITE-OPERATIONS.md, "Rollback").
 //
 // The Coolify API token is read from a file outside this repo (never commit it):
-//   COOLIFY_TOKEN_FILE, default ../../12_Rawatan-AI_Project/.coolify-token (relative to this repo)
+//   COOLIFY_TOKEN_FILE, default ../../09_Rawatan-AI/.coolify-token (relative to this repo)
 import { execSync } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -12,7 +12,7 @@ import { resolve } from 'node:path';
 const COOLIFY = 'https://coolify.ahader.cloud/api/v1';
 const APP_UUID = 'vksscgsg4w0ck000ss4ksgs0'; // Coolify application "website"
 const LIVE = 'https://dzikirassalam.com';
-const TOKEN_FILE = process.env.COOLIFY_TOKEN_FILE || resolve('../../12_Rawatan-AI_Project/.coolify-token');
+const TOKEN_FILE = process.env.COOLIFY_TOKEN_FILE || resolve('../../09_Rawatan-AI/.coolify-token');
 
 const run = (cmd, opts = {}) => execSync(cmd, { stdio: 'inherit', ...opts });
 const out = (cmd) => execSync(cmd, { encoding: 'utf8' }).trim();
