@@ -2158,5 +2158,77 @@
     "tbtMs": 0
    }
   ]
+ },
+ {
+  "at": "2026-11-02T08:23:55.543Z",
+  "commit": "f6f1068",
+  "results": [
+   {
+    "path": "/",
+    "form": "mobile",
+    "performance": 0.98,
+    "accessibility": 1,
+    "bestPractices": 1,
+    "seo": 1,
+    "lcpMs": 1082.0974999999999,
+    "cls": 0.08346350059307056,
+    "tbtMs": 0
+   },
+   {
+    "path": "/",
+    "form": "desktop",
+    "performance": 0.98,
+    "accessibility": 1,
+    "bestPractices": 1,
+    "seo": 1,
+    "lcpMs": 572.975,
+    "cls": 0.07654693575901568,
+    "tbtMs": 0
+   },
+   {
+    "path": "/rawatan/",
+    "form": "mobile",
+    "performance": 1,
+    "accessibility": 1,
+    "bestPractices": 1,
+    "seo": 1,
+    "lcpMs": 1085.431,
+    "cls": 0.04416844393369404,
+    "tbtMs": 0
+   },
+   {
+    "path": "/rawatan/",
+    "form": "desktop",
+    "performance": 1,
+    "accessibility": 1,
+    "bestPractices": 1,
+    "seo": 1,
+    "lcpMs": 530.351,
+    "cls": 0.00006084194899812958,
+    "tbtMs": 0
+   },
+   {
+    "path": "/tiktok-live/",
+    "form": "mobile",
+    "performance": 1,
+    "accessibility": 1,
+    "bestPractices": 1,
+    "seo": 1,
+    "lcpMs": 1609.614,
+    "cls": 0,
+    "tbtMs": 0
+   },
+   {
+    "path": "/tiktok-live/",
+    "form": "desktop",
+    "performance": 1,
+    "accessibility": 1,
+    "bestPractices": 1,
+    "seo": 1,
+    "lcpMs": 425.819,
+    "cls": 0.004093442230598174,
+    "tbtMs": 0
+   }
+  ]
  }
 ]
